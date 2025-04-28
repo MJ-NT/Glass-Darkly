@@ -1,0 +1,168 @@
+body 
+{
+    font-family: Garamond, serif;
+    font-size: 1.2rem;
+    background-color: #353535;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1
+{
+    font-size: 3rem;
+    margin: 0.5rem 0 2rem 0;
+    padding: 1rem 2rem;
+    border: 2px solid #000000;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+.about-links
+{
+    color: #53213e;
+    text-decoration: dotted;
+}
+
+.about-links:hover
+{
+    color: #000000;
+    text-decoration: underline;
+}
+
+.about-links:visited
+{
+    color: #650000;
+    text-decoration: none;
+}
+
+.btn
+{
+    font-size: 1.2rem
+}
+
+.btn-dark:hover
+{
+    background-color: #f0f0f0;
+    color: #000000;
+    border-color: #f0f0f0;
+}
+
+.card
+{ 
+    border: 2px solid #000000; 
+    padding: 10px; 
+    margin: 10px;
+}
+
+.custom-heading
+{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+
+.custom-radio .form-check-input:checked {
+    background-color: #292929;
+    border-color: #000000;
+}
+
+.custom-radio .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem #000000;
+}
+
+.custom-radio:hover
+{
+    background-color: #f0f0f0;
+    border-color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.footer-text
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar-brand:hover 
+{
+    background-color: #000000;
+    color: #f0f0f0;
+    border-color: #000000;
+}
+
+.nav-link:hover
+{
+    background-color: #000000;
+    color: #f0f0f0;
+}
+
+.option-text
+{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.page-wrapper
+{
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+/* Smaller block within the page for the login and register containers */
+.prelanding {
+    min-width: 200px;
+    max-width: 400px; /* More mobile-friendly */
+    min-height: 200px; /* Allows height to adjust to content but not collapse */
+    
+    /* Center within parent container */
+    margin: 50px auto;
+    
+    /* Center text content (flexbox inherited from body)*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Style */
+    padding: 20px;
+    background-color: #e7e7e7;
+    border: 5px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #000000;
+}
+
+.progress
+{
+    height: 20px
+}
+
+.alert .story-text
+{
+    font-size: 1.4rem;
+}
+
+.text-muted
+{
+    font-size: 1.1rem;
+}

@@ -1,0 +1,15 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore environment file containing secret key
+.env
+
+# Ignore database file(s) - good practice to cover all possible files, although only game.db is present here.
+*.db
+
+# Ignore flask_session folder (temporary sessions)
+flask_session/
+
+# Ignore virtual environment
+venv/

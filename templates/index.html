@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Through Glass Darkly
+{% endblock %}
+
+{% block content %}
+    <div class="custom-heading">
+        <h1>The House is ever hungry, {{ user["username"] }}</h1>
+    </div>
+    <h2 class="text-center">Are you ready to continue?</h2>
+    <div class="text-center">
+        <a href="/challenge" class="btn btn-dark mt-3 align-center">Delve</a>
+    </div>
+
+{% endblock %}
+
