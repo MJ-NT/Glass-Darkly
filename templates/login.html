@@ -5,16 +5,26 @@
 {% endblock %}
 
 {% block content %}
-    <div class="prelanding">
-        <h1>Log In</h1>
-        <form action="/login" method="post">
-            <div class="mb-3">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+    <div class="container text-center my-4">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 col-md-4 col-sm-4 mb-3">
+                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img" alt="Key 2">
+            </div>            
+            <div class="col-lg-4 col-md-4 col-sm-8 mt-0 mb-3 prelanding">
+                <h1>Log In</h1>
+                <form action="/login" method="post">
+                    <div class="mb-3">
+                        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+                    </div>
+                    <div class="mb-3">
+                        <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+                    </div>
+                    <button class="btn btn-dark m-2" type="submit">Log In</button>
+                </form>
             </div>
-            <div class="mb-3">
-                <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            <div class="col-lg-4 col-md-4 col-sm-4 mb-3 mt-2">
+                <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
             </div>
-            <button class="btn btn-dark m-2" type="submit">Log In</button>
-        </form>
+        </div>
     </div>
 {% endblock %}

@@ -159,11 +159,15 @@ Among other features:
 - I added a fade-in class to the challenges to fade in content using the `@keyframes` rule.
 - I implemented a `.prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
 - I implemented a `.lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
+- I implemented a key-img class to create tonally-appropriate borders and hover effects for the images I added.
 - I created a fixed footer using:
 . Bootstrap’s `flex-grow-1` on the container class for `<main>` (which grows the container to take up all available space, pushing the footer down if there is not enough content to do so naturally).
 . Bootstrap’s `mt-auto` for the footer (which pushes the footer down to the bottom when the content is shorter than the screen height).
 . I added `display: flex` to the body, turning it into a flex container. Also `flex-column`, which changes the flex direction to be vertical, so the content and footer are stacked vertically.
 
+### Images/
+
+This folder contains .png images of keys that I drew and added to the game to make it more visually appealing. Each key has a vertical variant.
 
 ## Templates
 
@@ -184,7 +188,7 @@ This page is the template for all challenges. It uses jinja syntax and condition
 
 ### index.html
 
-This is the home page. It contains a couple of headings and a button directing users to the challenge page (and back to the game).
+This is the home page. It contains images, a couple of headings and a button directing users to the challenge page (and back to the game).
 
 ### layout.html
 

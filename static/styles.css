@@ -17,7 +17,7 @@ h1
 {
     font-size: 2.5rem;
     margin: 0.5rem 0 2rem 0;
-    padding: 1rem 2rem;
+    padding: 1.25rem;
     border: 2px solid #000000;
     border-radius: 0.25rem;
     display: inline-block;
@@ -43,7 +43,7 @@ h1
 
 .btn
 {
-    font-size: 1.2rem
+    font-size: 1.1rem
 }
 
 .btn-dark:hover
@@ -100,8 +100,24 @@ h1
 
 .footer-text
 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
+}
+
+.key-img {
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid #adadad;
+    border-radius: 0.25rem;
+    padding: 10px;
+    background-color: #e7e7e7;
+}
+
+.key-img:hover {
+    transform: scale(1.05);
+    background-color: #000000;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;;
 }
 
 .lore-block {
@@ -130,7 +146,7 @@ h1
 
 .option-text
 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -141,7 +157,7 @@ h1
     border-radius: 0.5rem;
 }
 
-/* Smaller block within the page for the login and register containers */
+/* Smaller block within the page for the form containers */
 .prelanding {
     min-width: 200px;
     max-width: 400px; /* More mobile-friendly */
@@ -156,7 +172,7 @@ h1
     text-align: center;
     
     /* Style */
-    padding: 20px;
+    padding: 10px;
     background-color: #e7e7e7;
     border: 5px solid #000000;
     border-radius: 10px;
@@ -170,7 +186,7 @@ h1
 
 .alert .story-text
 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .text-muted

@@ -8,6 +8,19 @@
     <div class="custom-heading">
         <h1>The House is ever hungry, {{ user["username"] }}</h1>
     </div>
+    <div class="container text-center my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img" alt="Key 2">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <img src="{{ url_for('static', filename='images/key1.png') }}" class="img-fluid key-img" alt="Key 1">
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
+            </div>
+        </div>
+    </div>
     <h3 class="text-center">Are you ready to continue?</h3>
     <div class="text-center">
         <a href="/challenge" class="btn btn-dark mt-3 align-center">Delve</a>
