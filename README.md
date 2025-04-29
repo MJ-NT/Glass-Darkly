@@ -7,14 +7,14 @@ _Through Glass Darkly_ is an interactive fiction browser game based on the world
 
 In it, the player character takes on the role of a ‘visitant’, a being stolen from another world by the parasite dimension that is the ‘House’.
 
-> It is a mad, disturbing sprawl of wonders and terrors, but you don’t have time to worry about all that right now. Plucked from the fantastic dark only to be pitched through a mirror and set adrift in a kaleidoscopic dimension, you are propelled through the House as blood quickened by the heart.
+> It is a mad, disturbing sprawl of wonders and terrors, but you don’t have time to worry about all that right now. Plucked from the fantastic dark, only to be pitched through a mirror and set adrift in a kaleidoscopic sea, you are propelled through the House. Blood quickened by the heart.
  
 > Find the next mirror. Delve ever deeper. Do not look back.
 
 I created the game as my final project for Harvard's CS50 course.
 
-The backend is powered by Flask, with a SQLite database to store user data and game state.
-The frontend is built with HTML, CSS, and JavaScript, using Bootstrap for styling and layout.
+The backend is built with Flask, a lightweight Python web framework, and uses a SQLite database to manage user data and story progress.
+The frontend uses HTML, CSS, and JavaScript, with Bootstrap providing layout and styling.
 
 ## Background and creative process
 
@@ -158,6 +158,7 @@ Among other features:
 - I added pseudo-classes to buttons, the nav-bar links, and ‘about’ page hyperlinks to make the pages more dynamic and tonally consistent.
 - I added a fade-in class to the challenges to fade in content using the `@keyframes` rule.
 - I implemented a `.prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
+- I implemented a `.lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
 - I created a fixed footer using:
 . Bootstrap’s `flex-grow-1` on the container class for `<main>` (which grows the container to take up all available space, pushing the footer down if there is not enough content to do so naturally).
 . Bootstrap’s `mt-auto` for the footer (which pushes the footer down to the bottom when the content is shorter than the screen height).
@@ -168,7 +169,7 @@ Among other features:
 
 ### about.html
 
-This page describes what the game is. It references my influences and inspiration for the project - namely ‘A House of Many Doors’ and ‘Fallen London’ - and provides links to both. It also contains a content warning and copyright, credits and technical information.
+This page describes what the game is. It references my influences and inspiration for the project - namely ‘A House of Many Doors’ and ‘Fallen London’ - and provides links to both. Here, I wrote a short in-fiction blurb. It also contains a content warning and copyright, credits and technical information.
 
 ### account.html
 
