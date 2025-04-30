@@ -1,5 +1,4 @@
-body 
-{
+body {
     font-family: Garamond, serif;
     font-size: 1.2rem;
     background-color: #353535;
@@ -13,59 +12,52 @@ body
     min-height: 100vh;
 }
 
-h1
-{
-    font-size: 2.5rem;
-    margin: 0.5rem 0 2rem 0;
-    padding: 1.25rem;
-    border: 2px solid #000000;
-    border-radius: 0.25rem;
+h1 {
+    font-size: 2.25rem;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 1.25rem 2rem;
+    border: 4px double #000000;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
     display: inline-block;
 }
 
-.about-links
-{
+
+.about-links {
     color: #762956;
     text-decoration: dotted;
 }
 
-.about-links:hover
-{
+.about-links:hover {
     color: #000000;
     text-decoration: underline;
 }
 
-.about-links:visited
-{
+.about-links:visited {
     color: #650000;
     text-decoration: none;
 }
 
-.btn
-{
+.btn {
     font-size: 1.1rem
 }
 
-.btn-dark:hover
-{
+.btn-dark:hover {
     background-color: #f0f0f0;
     color: #000000;
     border-color: #f0f0f0;
 }
 
-.card
-{ 
+.card { 
     border: 2px solid #000000; 
     padding: 10px; 
     margin: 10px;
 }
 
-.custom-heading
-{
+.custom-heading {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 0rem;
 }
 
 .custom-radio .form-check-input:checked {
@@ -77,8 +69,7 @@ h1
     box-shadow: 0 0 0 0.1rem #000000;
 }
 
-.custom-radio:hover
-{
+.custom-radio:hover {
     background-color: #f0f0f0;
     border-color: #000000;
     cursor: pointer;
@@ -98,10 +89,30 @@ h1
     }
 }
 
-.footer-text
-{
+.footer-text {
     font-size: 1.1rem;
     font-weight: bold;
+}
+
+.key-container {
+    position: relative;
+}
+
+.key-hover-text {
+    opacity: 0;
+    margin-top: 0.75rem;
+    background: #353535;
+    color: #f0f0f0;
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    text-align: center;
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none;
+}
+
+.key-img:hover + .key-hover-text {
+    opacity: 1;
 }
 
 .key-img {
@@ -115,9 +126,23 @@ h1
 
 .key-img:hover {
     transform: scale(1.05);
-    background-color: #000000;
-    cursor: pointer;
+    background-color: #762956;
+    border: 1px solid #353535;
+    cursor: grab;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;;
+}
+
+.key-img:active {
+    cursor: grabbing;
+}
+
+.key-img-plain {
+    max-height: 300px;
+    object-fit: contain;
+    border: 1px solid #353535;
+    border-radius: 0.25rem;
+    padding: 10px;
+    background-color: #353535;
 }
 
 .lore-block {
@@ -131,27 +156,23 @@ h1
     border-radius: 0.25rem;
 }
 
-.navbar-brand:hover 
-{
+.navbar-brand:hover {
     background-color: #000000;
     color: #f0f0f0;
     border-color: #000000;
 }
 
-.nav-link:hover
-{
+.nav-link:hover {
     background-color: #000000;
     color: #f0f0f0;
 }
 
-.option-text
-{
+.option-text {
     font-size: 1.1rem;
     font-weight: bold;
 }
 
-.page-wrapper
-{
+.page-wrapper {
     background-color: #f5f5f5;
     border: 1px solid #ccc;
     border-radius: 0.5rem;
@@ -164,7 +185,7 @@ h1
     min-height: 200px; /* Allows height to adjust to content but not collapse */
     
     /* Center within parent container */
-    margin: 50px auto;
+    margin: 10px auto;
     
     /* Center text content (flexbox inherited from body)*/
     justify-content: center;
@@ -179,17 +200,14 @@ h1
     box-shadow: 0 4px 10px #000000;
 }
 
-.progress
-{
+.progress {
     height: 20px
 }
 
-.alert .story-text
-{
+.alert .story-text {
     font-size: 1.3rem;
 }
 
-.text-muted
-{
+.text-muted {
     font-size: 1.1rem;
 }

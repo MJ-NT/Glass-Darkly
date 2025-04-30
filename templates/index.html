@@ -11,13 +11,22 @@
     <div class="container text-center my-4">
         <div class="row justify-content-center">
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img" alt="Key 2">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img" alt="Key 2">
+                    <div class="key-hover-text">Cold, ill-fated iron.</div>
+                </div>
+            </div>            
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key1.png') }}" class="img-fluid key-img" alt="Key 1">
+                    <div class="key-hover-text">No door remembers it.<br>Nor so shall thee.</div>
+                </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <img src="{{ url_for('static', filename='images/key1.png') }}" class="img-fluid key-img" alt="Key 1">
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
-                <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
+                    <div class="key-hover-text">Spur of unthought intent.</div>
+                </div>
             </div>
         </div>
     </div>

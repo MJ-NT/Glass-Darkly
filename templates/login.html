@@ -6,11 +6,14 @@
 
 {% block content %}
     <div class="container text-center my-4">
+        <div class="custom-heading">
+            <h1 class="mt-0"><strong>Through Glass Darkly</strong></h1>
+        </div>
         <div class="row justify-content-center align-items-center">
-            <div class="col-lg-4 col-md-4 col-sm-4 mb-3">
-                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img" alt="Key 2">
+            <div class="col-lg-4 col-md-3 col-sm-4 mt-4 mb-3">
+                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img-plain" alt="Key 2">
             </div>            
-            <div class="col-lg-4 col-md-4 col-sm-8 mt-0 mb-3 prelanding">
+            <div class="col-lg-4 col-md-6 col-sm-8 prelanding">
                 <h1>Log In</h1>
                 <form action="/login" method="post">
                     <div class="mb-3">
@@ -22,8 +25,30 @@
                     <button class="btn btn-dark m-2" type="submit">Log In</button>
                 </form>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 mb-3 mt-2">
-                <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
+            <div class="col-lg-4 col-md-3 col-sm-4 mt-4 mb-3">
+                <img src="{{ url_for('static', filename='images/key2-vert.png') }}" class="img-fluid key-img-plain" alt="Key 2">
+            </div>
+        </div>
+    </div>
+    <div class="container text-center my-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-1">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key3.png') }}" class="img-fluid key-img" alt="Key 3">
+                    <div class="key-hover-text">You are welcome.</div>
+                </div>
+            </div>            
+            <div class="col-lg-5 col-md-4 col-sm-6 mb-1">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key1.png') }}" class="img-fluid key-img" alt="Key 1">
+                    <div class="key-hover-text">Sit and stay a while.</div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-1">
+                <div class="key-container d-flex flex-column align-items-center">
+                    <img src="{{ url_for('static', filename='images/key3.png') }}" class="img-fluid key-img" alt="Key 3">
+                    <div class="key-hover-text">Do not leave.</div>
+                </div>
             </div>
         </div>
     </div>

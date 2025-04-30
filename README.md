@@ -153,17 +153,19 @@ The css file expands upon the styling already implemented in Bootstrap.
 Among other features:
 
 - I altered the colour scheme, margins, padding, and text-alignment of multiple elements, which was important to establish the tone of the game.
-- I added a page-wrapper class (and added it to the `<main>` tag in layout.html) to apply a muted container wrapper around content.
+- I added a page-wrapper class (and added it to the `<main>` tag in layout.html) to apply a paler container wrapper around content (as the body has a dark theme).
 - I added borders to headings and altered the Bootstrap card class to apply borders as well. In the myself page, for example, they provide a cleaner layout.
 - I added pseudo-classes to buttons, the nav-bar links, and ‘about’ page hyperlinks to make the pages more dynamic and tonally consistent.
 - I added a fade-in class to the challenges to fade in content using the `@keyframes` rule.
-- I implemented a `.prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
-- I implemented a `.lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
-- I implemented a key-img class to create tonally-appropriate borders and hover effects for the images I added.
-- I created a fixed footer using:
+- I implemented a `prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
+- I implemented a `lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
+- I implemented a `key-img` class to create tonally-appropriate borders for the images I added. I then implemented hover effects with `key-img:hover`. I also added the class `key-hover-text` for text that I wanted to appear below the images. Initially, I was getting hover effects when mousing over the parent container for the image, so I used the adjacent sibling combinator `+` in ```.key-img:hover + .key-hover-text {
+    opacity: 1;
+}``` to ensure the text was displayed only when hovering over the image itself.
+- I created a fixed footer:
+. I added `display: flex` to the body, turning it into a flex container. Also `flex-column`, which changes the flex direction to be vertical, so the content and footer are stacked vertically.
 . Bootstrap’s `flex-grow-1` on the container class for `<main>` (which grows the container to take up all available space, pushing the footer down if there is not enough content to do so naturally).
 . Bootstrap’s `mt-auto` for the footer (which pushes the footer down to the bottom when the content is shorter than the screen height).
-. I added `display: flex` to the body, turning it into a flex container. Also `flex-column`, which changes the flex direction to be vertical, so the content and footer are stacked vertically.
 
 ### Images/
 
@@ -173,11 +175,11 @@ This folder contains .png images of keys that I drew and added to the game to ma
 
 ### about.html
 
-This page describes what the game is. It references my influences and inspiration for the project - namely ‘A House of Many Doors’ and ‘Fallen London’ - and provides links to both. Here, I wrote a short in-fiction blurb. It also contains a content warning and copyright, credits and technical information.
+This page describes what the game is. It references my influences and inspiration for the project - namely ‘A House of Many Doors’ and ‘Fallen London’ - and provides links to both. I also wrote a short in-fiction blurb here. The page contains a content warning and copyright, credits and technical information as well.
 
 ### account.html
 
-This page offers users the option to change their password through submitting a form.
+This page offers users the option to change their password through submitting a form. Images provide more visual and thematic interest. A Bootstrap grid system is used.
 
 ### challenge.html
 
@@ -188,7 +190,7 @@ This page is the template for all challenges. It uses jinja syntax and condition
 
 ### index.html
 
-This is the home page. It contains images, a couple of headings and a button directing users to the challenge page (and back to the game).
+This is the home page. It contains images, a couple of headings and a button directing users to the challenge page (and back to the game). Bootstrap's grid system is again used.
 
 ### layout.html
 
@@ -197,11 +199,11 @@ In the `<head>`, it uses `<meta charset="UTF-8">` as is standard, and ensures mo
 
 Because I altered the way messages are flashed by adding categories from Bootstrap (e.g. `danger` or `success`) to the routes, I also altered the global function `get_flashed_messages` to `get_flashed_messages(with_categories=true)`. This returns a list of tuples, where the first element is the category (i.e.success or danger), and the second element is the message itself. This is implemented within a jinja conditional loop.
 
-In `<body>`, layout.html implements a navbar, using conditional logic and jinja syntax to determine what is visible depending on whether a user is logged in. Alert messages (if present) are then handled in a `<header>` tag within a conditional loop. The page content of .html pages extending this template is held within `<main>` tags. Finally, the `<footer>` element contains a single line “Created by Matt Taylor”.
+In `<body>`, layout.html implements a navbar, using conditional logic and jinja syntax to determine what is visible depending on whether a user is logged in. Alert messages (if present) are then handled in a `<header>` tag within a conditional loop. The page content of .html pages extending this template is held within `<main>` tags. Finally, the `<footer>` element contains the single credit line “Created by Matt Taylor”.
 
 ### login.html
 
-This page contains a form in which users submit their username and password to gain access to the game.
+This page contains a form in which users submit their username and password to gain access to the game. As with 'Account', images provide more visual and thematic interest and the Bootstrap grid system is used.
 
 ### myself.html
 
@@ -213,7 +215,7 @@ This is the page that the `/challenge` route renders if the user’s menace reac
 
 ### register.html
 
-This page contains a form in which new users can register by providing a username, a password, and a confirmation of that password.
+This page contains a form in which new users can register by providing a username, a password, and a confirmation of that password. As with 'Account' and 'Login', images provide more visual and thematic interest and the Bootstrap grid system is used.
 
 ## Additional Files
 
@@ -228,5 +230,6 @@ This file details third-party python packages that will need to be installed to 
 ## Copyright and Credits
 
 This game was written and designed by Matt Taylor.
+
 It is a work of fan fiction based on Harry Tuffs' _A House of Many Doors_ and is not intended for commercial use.
 All rights to the original game and its characters, settings, and lore are owned by Harry Tuffs.
