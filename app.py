@@ -19,7 +19,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 # Flask-Session configuration
 app.config["SESSION_PERMANENT"] = True
-app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=14)
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(days=3)
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["SESSION_FILE_DIR"] = "./flask_session" 
 app.config["SESSION_USE_SIGNER"] = True  # Adds HMAC signing to session IDs - prevents tampering
@@ -138,7 +138,7 @@ def challenge():
 
     # Get user's story state
     cursor.execute("SELECT story_state FROM users WHERE user_id = ?", (user_id,))
-    # Fetch the value from the dictionary-like row returned by fetchone()
+    # Fetch the --value-- from the dictionary-like row returned by fetchone(), not just the row
     story_state = cursor.fetchone()["story_state"]
 
     # Get current challenge options based on story state
@@ -331,11 +331,11 @@ def myself():
 
         # Create story based on the stat improvement
         if stat == "watchful":
-            story_text = "It is quiet, down in the dark. You have honed your senses to a fine point."
+            story_text = "In the quiet moments, you reflect, that in the loud, you might act. You have honed your senses to a fine point."
         elif stat == "shadowy":
-            story_text = "You have made an art of subtlety. Your footsteps are lighter, your hands more deft."
+            story_text = " Subtlety is a caged science. You have made an art of it. Your footsteps are lighter, your hands more deft."
         elif stat == "dangerous":
-            story_text = "You have become leaner, sleeker, more powerful."
+            story_text = "What thews you have! How impressively they ripple. You have become leaner, sleeker, more powerful."
         elif stat == "persuasive":
             story_text = "A well-chosen word can stay a blade. What, then, can many do? Yours cut like a whetted knife."
 
@@ -423,6 +423,16 @@ def register():
         # Ensure password matches confirmation
         elif password != confirmation:
             flash("Passwords do not match", "danger")
+            return redirect("/register")
+        
+        # Ensure username not same as password
+        elif username == password:
+            flash("Username and password cannot be the same", "danger")
+            return redirect("/register")
+        
+        # Ensure password is at least 5 characters long
+        elif len(password) < 5:
+            flash("Password must be at least 8 characters long", "danger")
             return redirect("/register")
         
         # Introduce try and except error handling - Ensure username is not already taken

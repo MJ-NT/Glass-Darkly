@@ -6,7 +6,7 @@ challenges = [
 
 Huddled under a moth-eaten blanket, hands wrapped around a hot mug of what might charitably be described as tea, you take in your surroundings. Two soot-caked stokers rush past, barely sparing you a glance. You gaze after them. You're fairly certain that one of them was a shark. A <em>bipedal</em> shark. You give your 'tea' a long look.
 
-<em>This is a stat challenge. You have 4 core stats: Watchful, Shadowy, Dangerous and Persuasive. The higher your level in a stat, the more likely you are to succeed at a challenge testing that stat. You can see your current stat levels in the 'Myself' page. This challenge tests your Watchful stat.</em>""",
+<em>This is a stat challenge. You have 4 core stats: Watchful, Shadowy, Dangerous and Persuasive. The higher your level in a given stat, the more likely you are to succeed in a challenge testing that stat. You can see your current stat levels in the 'Myself' page. This challenge tests your Watchful stat.</em>""",
          "options": [
             {
                 "text": """Gaze into the liquid and try to recall how you came to be here, in this metal box""",
@@ -21,18 +21,18 @@ Do you feel better for having remembered? An impossible question. But on balance
                 "apprehension_change_success": 2,
                 "apprehension_change_failure": 1,
                 "menace_change_success": 0,
-                "menace_change_failure": 0
+                "menace_change_failure": 5
             }
         ]
     },
 
     {
         "story_state": 10,
-        "text": """<em>Success brings Apprehensions, the summation of knowledge gained. But failure, too, can be instructive. You can see your current number of Apprehensions and spend them to improve your stats in the 'Myself' page.</em>.
+        "text": """<em>Success brings Apprehensions, the summation of knowledge gained. But failure, too, can be instructive. Put simply, you gain Apprehensions by both passing and failing challenges. Success awards more Apprehensions than failure in a challenge, and some challenges award more than others. You can see your current number of Apprehensions and spend them to improve your stats in the 'Myself' page.</em>.
 
 You shake your head free of errant reminiscence and once again cast your gaze about. Down the other end of the hold, past shelves groaning under the weight of a miscellany of open crates, each stamped with 'Hextall' - whatever that is -  a swabbie listlessly pushes a mop around the deck.
 
-As you begin to surreptitiously decant your cup into a nearby urn, a sudden impact rocks the locomotive, and you are thrown to the floor. Wrestling with the blanket, you hear muffled shouts from above, and catch the voice of the captain, rising above the din: "All hands on deck! Gunners to stations!  Fire up the Scuttlers!". The kinetopede jerks into rocking motion, and you feel the familiar pull of a sudden acceleration.
+As you begin to surreptitiously decant your cup into a nearby urn, a sudden impact rocks the locomotive, and you are thrown to the floor. Wrestling with the blanket, you hear muffled shouts from the upper deck, and catch the voice of the captain, rising above the din: "All hands on deck! Gunners to stations!  Fire up the Scuttlers!". The kinetopede jerks into rocking motion, and you feel the familiar pull of a sudden acceleration.
 
 Finally extricating yourself from the blanket, you haul yourself up and stumble in the direction of the upper deck, joining the dazed swabbie at the foot of the stairs. They had picked you from the floor, plucked from the clutches of dehydration and madness, and now you were going to die anyway. The world is truly unfair.
 
@@ -44,17 +44,22 @@ The kinetopede lists dangerously to the left and you lurch towards a porthole, g
                 "text": """(Pull the swabbie out of the crossfire).""",
                 "stat": "dangerous",
                 "difficulty": 1000,
-                "success_text": "Well done, this should be impossible!",
+                "success_text": """Well done, this should be impossible!
+
+Unfortunately, in pushing the swabbie out of the line of fire, you took a cannon ball in your chest. What rotten luck, eh?""",
                 "failure_text": """You saw the flash too late, heard the thunder of the cannon too late. The shot tears into the hull and passes clean through the other side.
+
 There is no scream. One moment the swabbie is there, the next he is gone.
 
-The darkness howls outside the kinetopede. Some thought rises from deep within your mind, a kraken rushing to the surface: <em>It is hungry</em>.
+The darkness howls outside the kinetopede. Some thought rises from deep within your mind, a kraken rushing to the surface.
+
+<em>It is hungry</em>.
 """,
                 "next_state_success": 50,
                 "next_state_failure": 50,
                 "apprehension_change_success": 0,
                 "apprehension_change_failure": 1,
-                "menace_change_success": 0,
+                "menace_change_success": 100,
                 "menace_change_failure": 25
             },
         ]
@@ -62,7 +67,7 @@ The darkness howls outside the kinetopede. Some thought rises from deep within y
 
     {
         "story_state": 50,
-        "text": """<em>Not all injuries are visible, nor all threats tangible. Menace is an abstract representation of the travails that you contend with. Facing threats to your bodily person, your sanity, or the like, will increase your menace level should you fail the challenge (and, occasionally, when you succeed). Menace, like your other stats, can be found in the 'Myself' page.</em>.
+        "text": """<em>Not all injuries are visible, nor all threats tangible. Menace is an abstract representation of the travails that you contend with. Facing threats to your bodily person, your sanity, or, gods forbid, your sartorial integrity, may increase your Menace level should you fail the challenge (and, occasionally, when you succeed). Menace, like your other stats, can be found in the 'Myself' page.</em>.
 
 You remain, quite remarkably, unscathed, although it will be a long time before you can forget the swabbie's face.
 
@@ -80,13 +85,14 @@ With those cryptic words, she removes a silver-framed mirror from her pocket and
                 "difficulty": 1,
                 "success_text": """There is much you do not know about this world. Perhaps it is customary here to break a mirror over the head of a valued friend? Perhaps you are making inroads to becoming such a friend? Perhaps you are simply in shock. In any case, what follows next serves to put it from your mind.""",
                 "failure_text": """You can't help but allow a look of reproach to cross your features. Is she hurt? Well then, perhaps she shouldn't go around breaking mirrors over others' heads.
+
 You have little time to ponder this, however, as the world around you distorts and shatters.""",
                 "next_state_success": 100,
                 "next_state_failure": 100,
                 "apprehension_change_success": 2,
                 "apprehension_change_failure": 1,
                 "menace_change_success": 0,
-                "menace_change_failure": 0
+                "menace_change_failure": 5
             },
         ]
     },
@@ -96,7 +102,7 @@ You have little time to ponder this, however, as the world around you distorts a
         "story_state": 100,
         "text": """You fall. Through kaleidoscopic brilliance, past countless gilded frames and snapshot tableaux: A vast gothic sprawl of a city, great airborne sailing ships tethered like bunting to its spires. Laughing fishermen trawling gravestones from a meandering river. A dizzyingly tall cascade of pale water, equally pale figures swooping dreamlike within it. A ten-mile-high totem, draped in a cloak of a million cawing crows.
 
-You cast about for reason within this ever-shifting madness, stuffing the music box into your pocket before it can be knocked from your grasp. Your heartbeat thunders, impossibly loud, as you try to still your panicking mind.
+You cast about for reason within this ever-shifting madness, stuffing the music box into your pocket before it can be knocked from your grasp. Your heartbeat thunders, impossibly loud, as you attempt to still your panicking mind.
 
 <em>Sometimes, fate will offer multiple approaches to tackling a challenge. These may test different stats, or sometimes the same stat at a different difficulty level. More difficult challenges may offer more narrative or mechanical benefits.</em>""",
         "options": [
@@ -119,10 +125,10 @@ You tumble towards a plain-framed mirror.""",
                 "text": """A ship sweeps in front of you, sails filling with a non-existent breeze. Slip under its hull; let it guide you.""",
                 "stat": "shadowy",
                 "difficulty": 2,
-                "success_text": """You glide into its slipstream and down, latching onto the underside like a particularly stealthy barnacle. You are not alone here: Above, a child on board is crying for their doll. Next to you, a clown-faced puppet grins.
+                "success_text": """You glide into its slipstream and down, latching onto the underside like a particularly stealthy barnacle. You are not alone here. Above, a child on board is crying for their doll. Next to you, a clown-faced puppet grins.
 
 As the ship passes over a wall of silvered metal, you detach, diving through a plain-framed mirror.""",
-                "failure_text": """Shouts come from the deck as you approach. Indistinct figures with large poles fend you off, sending you careening towards a plain-framed mirror.""",
+                "failure_text": """Shouts come from the deck as you approach. A hunched, avian creature has raised the hue and cry from the rigging. Indistinct figures with large poles appear on the sides to fend you off, and send you careening towards a plain-framed mirror below.""",
                 "next_state_success": 101,
                 "next_state_failure": 101,
                 "apprehension_change_success": 2,
@@ -134,8 +140,10 @@ As the ship passes over a wall of silvered metal, you detach, diving through a p
                 "text": """Reach to snatch the titan's cloak. Fly with a thousand wings!""",
                 "stat": "dangerous",
                 "difficulty": 2,
-                "success_text": """Here, in the irreality of this plunging vortex of mirrors, nothing seems more natural. You snap out a hand and catch not the cloak, but a crow from within it. It struggles in your grasp; beats its wings; steers you inexorably towards a plain-framed mirror.""",
-                "failure_text": """You reach for the cloak. A thousand thousand mad gimlet eyes stare at your outstretched arm. <em>Food</em>.
+                "success_text": """Here, in the irreality of this plunging vortex of mirrors, nothing could seem more natural. You snap out a hand and catch not the cloak, but a crow from within it. It struggles in your grasp; beats its wings; steers you inexorably towards a plain-framed mirror.""",
+                "failure_text": """You reach for the cloak. A thousand thousand mad gimlet eyes stare at your outstretched arm.
+
+<em>Food</em>.
 
 You tumble away, clutching the bloodied stump where your arm used to be. You watch in fascinated horror as it regrows, like a new bud, sprouting from your elbow. You feel a crunch as you crash through a plain-framed mirror.""",
                 "next_state_success": 101,
@@ -150,7 +158,7 @@ You tumble away, clutching the bloodied stump where your arm used to be. You wat
                 "stat": "persuasive",
                 "difficulty": 2,
                 "success_text": """Your reflection nods and winks, gesturing to a plain-framed mirror to your right. You turn and propel yourself towards it, bracing for impact.""",
-                "failure_text": """Your reflection turns and holds up a tombstone - it's yours! Theirs! Whatever - you spiral away towards a plain-framed mirror. Your reflection winks.""",
+                "failure_text": """Your reflection turns and holds up a tombstone - it's yours! Theirs! Whatever - you spiral away towards a plain-framed mirror. Your reflection smiles.""",
                 "next_state_success": 101,
                 "next_state_failure": 101,
                 "apprehension_change_success": 2,
@@ -174,7 +182,7 @@ You are in an enclosed space. Perhaps six feet long. Two, or perhaps two-and-a-h
 
 <em>Ah</em>.
 
-The unhappy realisation slopes abashedly into your mind: You are buried alive.
+The unhappy realisation slopes abashedly into your mind: you are buried alive.
 
 You have to hope that this is not what the captain intended for you. You feel the music box, miraculously intact, still in your pocket. You leave it there: you have more immediate concerns.""",
          "options": [
@@ -215,6 +223,7 @@ You take a deep breath.""",
     {
         "story_state": 105,
         "text": """Are you going to die down here, deep in the earth?
+
 Not if you can help it.""",
          "options": [
             {
@@ -228,7 +237,7 @@ Your howls of protest are answered, eventually, as you hear the soil shifting ab
 
 But it's not enough.
 
-If anyone is listening, they do so only to mock you. You can hear your heart, joined in chorus by others here in the dark earth.
+If any god is listening, they do so only to mock you. You can hear your heart, joined in chorus by others here in the dark earth.
 <em>A-gain</em>
 <em>A-gain</em>
 <em>A-gain</em>""",
@@ -244,7 +253,7 @@ If anyone is listening, they do so only to mock you. You can hear your heart, jo
 
     {
         "story_state": 110,
-        "text": """The lid is prised open. Gnarled fingers pluck you from the coffin and into a vaulted catacomb, lit by greenish lantern-light: glowworms, writhing against glass jars.
+        "text": """The lid is prised open. Gnarled fingers pluck you from the coffin and into a vaulted catacomb, illuminated by greenish lantern light: glow-worms, writhing against glass jars.
 
 Your saviour is a peculiar sort. A gangling figure, spindle-armed within a battered overcoat that threatens to engulf his entire frame. He leers unpleasantly at you, flesh hanging in jowls that are looser than mere age would account for.
 
@@ -260,7 +269,7 @@ Gravespite, it transpires, is a colony of the dead. And this, a lower floor of t
 
 So <em>that's</em> what you'd call the kaleidoscopic nightmare you just passed through. Oh well, it's heartening to know that you'll have to go through it again, you wouldn't want to get <em>too</em> comfortable in this hellhole.
 
-The ghoul gestures to a worn stairway, a horrible smile still settled on his receded lips. You totter unsteadily over, shedding gravedirt as you go, and make your way up it. After a dozen steps or so, you emerge into a sprawling subterranean necropolis, bathed in the sickly green luminescence of a thousand glowworm lanterns. It is, fittingly, deathly quiet.
+The ghoul gestures to a worn stairway, a horrible smile still settled on his receded lips. You totter unsteadily over, shedding gravedirt as you go, and make your way up it. After a dozen steps or so, you emerge into a sprawling subterranean necropolis, bathed in the sickly green luminescence of a thousand glow-worm lanterns. It is, fittingly, deathly quiet.
 
 Now then: if you were a mirror, where would you be?
 
@@ -289,7 +298,7 @@ You make slow progress, but progress nonetheless, finally arriving, somewhat sha
 
 Your summons are eventually met by a stooped gentleman in faded finery. He invites you in with surprising cordiality, his voice far smoother than you would expect from the long-dead. But then, it is not a topic you had given much thought until now.
 
-"We were preparing dinner" he says, beckoning you to follow him down a stairway. "Join us, won't you?" """,
+"We were preparing dinner" he intones, beckoning you to follow him down a stairway. "Join us, won't you?" """,
                 "failure_text": """You approach a likely-looking tomb and begin to knock politely but insistently upon the heavy stone door.
 
 Muffled shouts from inside tell you exactly where you can go, in the least helpful sense of the expression. You beat a hasty retreat, out into the endless rows of headstones.""",
@@ -305,7 +314,7 @@ Muffled shouts from inside tell you exactly where you can go, in the least helpf
 
     {
         "story_state": 120,
-        "text": """From this eyrie, all of the vast graveyard is laid out below you. A hundred different religious symbols compete for dominance on the spires of the grander tombs. The battle is mirrored on the humbler headstones, set in haphazard rows. A few of them are repeated again and again: a serpent, a distressingly-bulging pyramid, a swine-head, a clock. Perhaps this clocktower is the grandest tomb of them all? It dominates the opposing wall from your position. In front of it, a sea of writhing glowworms provides undulating illumination.
+        "text": """From this eyrie, all of the vast graveyard is laid out below you. A hundred different religious symbols compete for dominance on the spires of the grander tombs. The battle is mirrored on the humbler headstones, set in haphazard rows. A few designs are repeated again and again: a serpent; a distressingly-bulging pyramid; a swine-head; a clock. Perhaps this clocktower is the grandest tomb of them all? It dominates the opposing wall from your position. In front of it, a sea of writhing glow-worms provides undulating illumination.
 
 There is another tomb, almost as large, halfway between you and the clocktower. You'll make that your next marker, you decide, and deal with the sea of worms when you come to it.
 
@@ -315,12 +324,12 @@ But how to get there?""",
                 "text": """Map out the way from this vantage point.""",
                 "stat": "watchful",
                 "difficulty": 4,
-                "success_text": """You trace the winding tombways, the snickets and ginnels between each mausoleum and catacomb, in the dust on the spire.
+                "success_text": """You trace the winding tombways, the snickets and ginnels between each crypt and catacomb, in the dust on the spire.
 
 You spend a moment to commit it to memory, then pick your way back down and walk the streets, guided by your mind's-eye map.
 
 You come upon it sooner than expected: the low rise of white marble.""",
-                "failure_text": """You trace the winding tombways, the snickets and ginnels between each mausoleum and catacomb, in the dust on the spire.
+                "failure_text": """You trace the winding tombways, the snickets and ginnels between each crypt and catacomb, in the dust on the spire.
 
 You gaze at it for a long moment, attempting to commit it to memory, then pick your way back down to the streets.
 
@@ -333,16 +342,15 @@ But they are different. Shifted? Changed, somehow? You soon realise that you are
                 "menace_change_failure": 20
             },
             {
-                "text": """There must be some hidden pattern to it. Think: what is <em>not</em> being shown here?""",
+                "text": """There must be some hidden configuration to this matryoshka necropolis. Think: what is <em>not</em> being shown?""",
                 "stat": "shadowy",
                 "difficulty": 4,
                 "success_text": """There is a tracery of a pattern here, written in the tombs viewed from above. A maddening geometry, but you have the key, you're sure.
 
-You pick your way back down to the streets, then close your eyes. The pattern burns behind your eyelids. You let your feet guide you, until you bump up against a cold stone door. You smile: you have arrived.""",
+You pick your way back down to the streets, then breathe deeply, and close your eyes. The pattern burns, incarnadine on the back of your eyelids. You let your feet guide you, until you bump up against a cold stone door. You smile: you have arrived.""",
                 "failure_text": """There is a tracery of a pattern here, written in the tombs viewed from above. A maddening geometry, if only you could keep it in your head.
 
-You pick your way back down to the streets, then press on, reaching for the thread in your mind's eye. But it is elusive, never lingering long enough for you to get your bearings. Eventually, you are forced to admit that you are lost.
-""",
+You pick your way back down to the streets, then press on, reaching for the thread in your mind's eye. But it is elusive, whipping around every corner, snaking through lintels and skulking in neighbouring doorways, never lingering long enough for you to get your bearings. Eventually, you are forced to admit that you are lost.""",
                 "next_state_success": 140,
                 "next_state_failure": 125,
                 "apprehension_change_success": 3,
@@ -359,14 +367,14 @@ You pick your way back down to the streets, then press on, reaching for the thre
 
 Eventually, you see it, looming above a row of headstones presumably marking lesser lives. It squats on a low rise, almost accusatory in its ostentation.
 
-Indeed, as you approach, you can feel a weight of judgement pressing against you, emanating from the tomb. How dare you approach? Would you not be better suited to one of these lowly satellite graves?""",
+Indeed, as you approach, you can feel a weight of judgement pressing against you, emanating from the tomb. How dare you approach? Are you not better suited to these lowly satellite graves?""",
         "options": [
             {
                 "text": """The stone is right. You are nobody. You are not a threat. Hide your smile.""",
                 "stat": "shadowy",
                 "difficulty": 4,
                 "success_text": """No, not you. You are an unworthy supplicant, happy to simply share a reality with the unfeeling stone. Your smile widens as you make the final few steps to the mausoleum.""",
-                "failure_text": """It is not until the last few paces that your deception is discovered. The full weight of wrathful indignation pushes down upon you, but you will not be swayed. You push forwards, ignoring the pain.""",
+                "failure_text": """It is not until the final few paces that your deception is discovered. The full weight of wrathful indignation pushes down upon you, but you will not be swayed. You push forwards, ignoring the pain; the blood that pools in your mouth.""",
                 "next_state_success": 140,
                 "next_state_failure": 140,
                 "apprehension_change_success": 2,
@@ -378,7 +386,7 @@ Indeed, as you approach, you can feel a weight of judgement pressing against you
                 "text": """You will not bow to a tomb. What right have the dead to judge you?""",
                 "stat": "persuasive",
                 "difficulty": 5,
-                "success_text": """The stone does not expect this. You march towards the mausoleum with purpose, throwing off what feeble attempts the stone makes to penetrate your mind.""",
+                "success_text": """The stone does not expect this. You march towards the mausoleum with purpose, throwing off what feeble attempts the stone makes to penetrate your mind. The roar in your ears recedes to a sullen hum as you trip up the stairs to the door.""",
                 "failure_text": """The weight intensifies around you, but you march on, fuelled by sheer force of will. It is a struggle though. The final few steps sap your strength, but you will not be deterred.""",
                 "next_state_success": 140,
                 "next_state_failure": 140,
@@ -421,7 +429,7 @@ You have come this far. You grit your teeth and swallow a mouthful of writhing g
 
 The world goes dark. Images flash before your eyes. A many-spired city, buckling under a sudden pressure, the masonry cracking and crumbling in one motion. A heat-haze rising from a boiling ocean. A tree laden with shining stars.
 
-You wake with a start, the old man's cloudy eyes, full of concern, a few inches from yours. He scrambles back, apologising profusely.
+You wake with a start, the old man's cloudy eyes, full of concern, mere inches from yours. He scrambles back, apologising profusely.
 
 The swift dispensing of information is your remedy of choice, and that, he has to hand. The clocktower is inaccessible from the necropolis proper, he says, but there is a way through the mausoleum of Abraham Croaker, at the centre of the place. He even offers a map by way of an apology.
 
@@ -439,7 +447,7 @@ A few minutes later, you find yourself outside the mausoleum""",
                 "difficulty": 4,
                 "success_text": """You make a dramatic show of dropping your fork, ducking under the table to retrieve it. You then slip out the other side and make a dash for the door.
 
-As it happens, you needn't have bothered with such an elaborate ruse. When you glance back at the doorway, your host is babbling happily in the general direction of where you were sat, apparently oblivious to your absence.
+As it happens, you needn't have bothered with such an elaborate ruse. When you glance back at the doorway, your host is babbling happily in the general direction of your vacated chair, apparently oblivious to your absence.
 
 You trot back up the stairs and head out into a field of headstones.""",
                 "failure_text": """Your host has a wiliness that belies his decrepitude. Try as you might, you cannot manufacture an excuse to slip away, nor a distraction to facilitate a clean escape.
@@ -457,7 +465,9 @@ You do, at least, manage to avoid eating any of the food, but when you leave hou
 
     {
         "story_state": 135,
-        "text": """You wander, rudderless, between the gravestones for a time. Do you see your own, there? Do you see your epitaph? Is that what prompts you to return to the spire? You'd rather not say.
+        "text": """You wander, rudderless, between the gravestones for a time. Do you see your own, there? Do you see your epitaph? Is that what prompts you to return to the sepulchre?
+
+You'd rather not say.
 
 The cryptkeeper is stood outside the catacomb you recently vacated. He chuckles as you pass, low and dry, like dirt shaken in a tin can.""",
        "options": [
@@ -487,7 +497,7 @@ You raise your fist and strike it against the door. Once. Twice. Thrice.
 
 On the third knock, the white marble shifts, opening with terrible slowness. Behind it, a many-limbed figure stands.
 
-Your first impression is that of a pale, moon face. Waxen, masklike, serene. A second glance reveals long, spider-like limbs, folded into a torso that is more like a thorax. You dare not chance a third look.
+Your first impression is that of a pale, moon face. Waxen, masklike, serene. A second glance reveals long, segmented limbs, folded into a torso that is more like a thorax. You dare not chance a third look.
 
 When it speaks, it is with a pleasant, fluting voice.
 
@@ -507,10 +517,10 @@ You have a nagging feeling from deep within your brain that tells you that this 
                 "difficulty": 4,
                 "success_text": """It wishes to nourish itself on your words? Feed it hemlock, arsenic, atropine. It will drink deep of you, and wish it had not tasted the spring.
 
-As you speak, the creature unspools a long butterfly tongue, tasting the air. Two minutes later, it is spasming at your feet. You step over it and towards a stairway framed by glowworm lanterns.""",
+As you speak, the creature unspools a long, butterfly proboscis, tasting the air. Two minutes later, it is spasming at your feet. You step over it and towards a stairway framed by glow-worm lanterns.""",
                 "failure_text": """The words are drawn from you like pulled teeth. They rise, unbidden, from your throat as if extracted by forceps, your vocal chords contorting around the sounds. You tell it of your home, the Sun, the scent of the sea, and of the flowers in bloom. The salt sting of tears, the warmth of another's embrace. The cleansing rain and bitter heat of summer…
 
-You awaken on the cold stone floor of the mausoleum. The creature is nowhere to be seen. Glowworms writhe in the lanterns above a set of stairs, leading down.""",
+You awaken on the cold stone floor of the mausoleum. The creature is nowhere to be seen. glow-worms writhe in the lanterns above a set of stairs, leading down.""",
                 "next_state_success": 150,
                 "next_state_failure": 150,
                 "apprehension_change_success": 2,
@@ -522,12 +532,12 @@ You awaken on the cold stone floor of the mausoleum. The creature is nowhere to 
                 "text": """Wrap your story in half-truths.""",
                 "stat": "persuasive",
                 "difficulty": 4,
-                "success_text": """You honey your words until there is nothing of substance left. They are sickly, insubstantial, an insufficient. You befuddle and contradict, you mix metaphors with gleeful abandon, you obfuscate.
+                "success_text": """You honey your words until there is nothing of substance left. They are sickly, insubstantial. An insufficience. You befuddle and contradict, you mix metaphors with gleeful abandon, you obfuscate.
 
-As you speak, the creature unspools a long butterfly tongue, tasting the air. Two minutes later, the tongue recedes into its mouth and it moves away, retreating into the shadows of the ceiling far above. You step towards a stairway framed by glowworm lanterns.""",
+As you speak, the creature unspools a long, butterfly proboscis, tasting the air. Two minutes later, the tongue recedes into its mouth and it moves away, retreating into the shadows of the ceiling far above. You step towards a stairway framed by glow-worm lanterns.""",
                 "failure_text": """The words are drawn from you like pulled teeth. They rise, unbidden, from your throat as if extracted by forceps, your vocal chords contorting around the sounds. You tell it of your home, the Sun, the scent of the sea, and of the flowers in bloom. The salt sting of tears, the warmth of another's embrace. The cleansing rain and bitter heat of summer…
 
-You awaken on the cold stone floor of the mausoleum. The creature is nowhere to be seen. Glowworms writhe in the lanterns above a set of stairs, leading down.""",
+You awaken on the cold stone floor of the mausoleum. The creature is nowhere to be seen. glow-worms writhe in the lanterns above a set of stairs, leading down.""",
                 "next_state_success": 150,
                 "next_state_failure": 150,
                 "apprehension_change_success": 2,
@@ -541,11 +551,11 @@ You awaken on the cold stone floor of the mausoleum. The creature is nowhere to 
  # Ghoulwatch story_state 150-199
         {
         "story_state": 150,
-        "text": """You move down the greenish stair. There is an earthen passage at the bottom, the scent of the soil rich and cloying. A few paces along, you realise that you must be walking under the sea of glowworms. You can <em>hear</em> them. Individual worms dot the tunnel at irregular intervals. A few must have made their way through the loamy earth above.
+        "text": """You move down the greenish stair. There is an earthen passage at the bottom, the scent of the soil rich and cloying. A few paces along, you realise that you must be walking under the sea of glow-worms. You can <em>hear</em> them. Individual worms dot the tunnel at irregular intervals. A few must have made their way through the loamy earth above.
 
 You close your mind to the noise: the unsettling, pervasive rustle of a million tiny bodies writhing in concert. One foot in front of the other. That's the way.
 
-After a few minutes, the passageway slopes upwards in a gentle incline. You scramble the last few steps, emerging into a vast chamber, each wall dominated by the inverse side of a clock face. At the centre, three great gear trains, each traced by verdigris, stand motionless. Casting your eye upward, you see nine bells, hanging silent in the belfry far above.
+After a few minutes, the passageway slopes upwards in a gentle incline. You scramble the last few steps, emerging into a vast chamber, each wall dominated by the inverse side of a clock face. At the centre, three great gear trains, each traced by verdigris, stand motionless. Casting your eye upwards, you see nine bells, hanging silent in the belfry far above.
 
 That creature had known you were looking for a mirror. Was it merely taunting you?
 
@@ -557,7 +567,7 @@ It is now a question of how to extract it. The answer comes to you slowly, an un
 
 <em>Pray</em>.
 
-But you have encountered many different iconographies in this place. The clock is the most obvious answer, does that make it the right one? You have seen the serpent, the swine-head, the pyramid. You have seen more.""",
+But you have encountered many different iconographies in this place. The clock is the most obvious answer. Does that make it the right one? You have seen the serpent, the swine-head, the pyramid. You have seen more.""",
         "options": [
             {
                 "text": """The clock. Occam's razor.""",
@@ -596,14 +606,14 @@ But something is terribly wrong.""",
 
 The name slithers into your mind, appropriately enough. Your vision is filled with a great coil, a gordian knot of serpents. It is ancient. It <em>hungers</em>. You are observed by a thousand ophidian eyes.
 
-How would you feed such a creature? You offer a thousand secrets of your world. The esoteric, the obscure, the anodyne, the mundane: it devours them all with equal relish.
+How would you feed such a creature? You make an offering of secrets of your world. The esoteric, the obscure, the anodyne, the mundane: it devours them all with equal relish.
 
-When you finally finish your account, and your vision unclouds, you find the mirror lying in the gravedirt in front of you.""",
+When you finally finish your account, when your vision unclouds, the mirror lies in the gravedirt in front of you.""",
                 "failure_text": """<em>Nahash</em>
 
 The name slithers into your mind, appropriately enough. Your vision is filled with a great coil, a gordian knot of serpents. It is ancient. It <em>hungers</em>. You are observed by a thousand ophidian eyes.
 
-How would you feed such a creature? You offer a thousand secrets of your world. The esoteric, the obscure, the anodyne, the mundane: it devours them all with equal relish.
+How would you feed such a creature? You make an offering of secrets of your world. The esoteric, the obscure, the anodyne, the mundane: it devours them all with equal relish.
 
 But it is not satisfied. It wishes to impart it's knowledge to <em>you</em>, too.""",
                 "next_state_success": 195,
@@ -642,7 +652,7 @@ You would kneel before the Iron Swine? You are <em>unworthy</em>""",
                 "difficulty": 6,
                 "success_text": """Your nostrils are immediately filled with the sweet scent of decay. You can taste it in the air: blood, metallic on the tongue.
 
-Your vision clouds, and you close your eyes against the acrid spray of ichor. You open them again. A mountainous scab in the shape of a pyramid stands before you, one bile-yellow eye fixing you in its gaze.
+Your vision clouds, and you close your eyes against the acrid spray of ichor. You open them again. A mountainous scab in the shape of a pyramid stands before you, one xanthous eye fixing you in its gaze.
 
 <em>Scorthidion</em>.
 
@@ -652,10 +662,10 @@ What can you offer such a being? Your heartbeat quickens in response, your pulse
 
 No, not blood. That is too easy, and this god clearly has an abundance of it. Knowledge shall be its medicine, and medicine its offering. You talk of the surgical advances in your world. Of a reality where the letting of blood is no longer commonplace.
 
-The mountain observes you for a long moment. You turn as a gout of blood from a seeping wound sprays out, and when you turn back, the mirror lies in the gravedirt in front of you. You check your clothes - they are not reddened, nor stained.""",
+The mountain observes you for a long moment. There is a noise approaching derision, and you turn as a gout of blood from a seeping wound sprays out. But when you turn back, the mirror lies in the gravedirt in front of you. You check your clothes - they are not reddened, nor stained.""",
                 "failure_text": """Your nostrils are filled with the sweet scent of decay. You can taste it in the air: blood, metallic on the tongue.
 
-Your vision clouds, and you close your eyes against the acrid spray of ichor. You open them again. A mountainous scab in the shape of a pyramid stands before you, one bile-yellow eye fixing you in its gaze.
+Your vision clouds, and you close your eyes against the acrid spray of ichor. You open them again. A mountainous scab in the shape of a pyramid stands before you, one xanthous eye fixing you in its gaze.
 
 <em>Scorthidion</em>.
 
@@ -678,7 +688,7 @@ The mountain darkens, the eye narrows. You presume to treat and label malady?"""
 
     {
         "story_state": 160,
-        "text": """You are gripped by a sudden, wracking pain in your arms. You stare in horror as your veins begin to darken, green shoots emerging from under your fingernails, buds blooming into yellow. Your vision is filled with it.
+        "text": """You are gripped by a sudden, wracking pain in your arms. You stare in horror as your veins begin to darken, green shoots emerging from under your fingernails, buds blooming into yellow. Your vision is filled with it, the colour both behind and beyond.
 
 <em>How dare you entreaty the traitor? Cause of sorrow. Bane of wilting joy</em>.
 
@@ -688,7 +698,7 @@ You stumble forward, your body withering as the sunflowers take root.""",
                 "text": """Hurl yourself through the mirror, gears be damned!""",
                 "stat": "dangerous",
                 "difficulty": 5,
-                "success_text": """You squeeze yourself through the gears, ignoring the searing pain as sunflowers are ripped from your body. With a final shout, you punch through the glass, tumbling into the Mirrorwise. As soon as you enter, the yellow in your vision recedes: the flowers are gone.""",
+                "success_text": """You squeeze yourself through the gears, ignoring the searing pain as the flowers are ripped from your body. With a final shout, you punch through the glass, tumbling into the Mirrorwise. As soon as you enter, the yellow in your vision recedes: the flowers are gone.""",
                 "failure_text": """It's no use. You urge your body to move, but you cannot. The flowers twist and twine about your head, a crown of thorns.""",
                 "next_state_success": 200,
                 "next_state_failure": 200,
@@ -704,9 +714,7 @@ You stumble forward, your body withering as the sunflowers take root.""",
         "story_state": 170,
         "text": """Forked tongues crowd your ears, a sibilant chorus of secrets you would rather not have known.
 
-<em>"Murders of metal crows swarm beneath."
-"A plague walks the House in human skin."
-"Lightless is the light that darkness hides."</em>
+A daisy chain of hushed conversations, whispered promises, dark tales confided. Veiled threats and guileless indiscretion. Confessions: thunderous, tentative, of treason; faith; love.
 
 They should be meaningless to you, but still they clamour and clang about your head, building in an awful crescendo.
 
@@ -732,7 +740,7 @@ Before you - there! The mirror hangs suspended in the coils.""",
         "story_state": 180,
         "text": """You dare prostrate yourself before the War Pig?
 
-<em>Weak</em>
+<em>Weak</em>.
 
 You are given an education in every pain imaginable. You are beaten. You are sliced. You are crushed beneath iron boots. Bloody knives rise again, and again, and again.
 
@@ -744,7 +752,7 @@ Beneath a film of blood, you stagger to your feet for one final attempt at escap
                 "difficulty": 5,
                 "success_text": """The Iron Swine fights with ferocity, but he has underestimated your cunning.
 
-You spot your opening, duck under his wild-hued onslaught, and allow him to break apart the mechanism. It is just enough for you to dart through, throwing yourself bodily through the mirror. You leave his shrieks of fury behind you.""",
+You spot your opening, duck under his wild onslaught, and allow his blows to fall heavy upon the mechanism. The gears tumble from their casings, the gap just wide enough for you to dart past, throwing yourself bodily through the mirror. You leave his shrieks of fury behind you.""",
                 "failure_text": """You cannot outmaneuver a god of war. You feint, you dodge, but he reads your every move. His knife rises, one final time.""",
                 "next_state_success": 200,
                 "next_state_failure": 200,
@@ -769,7 +777,7 @@ You stagger towards the mirror, falling to a crawl.""",
                 "stat": "dangerous",
                 "difficulty": 5,
                 "success_text": """You pull yourself through the gears, leaving the cogs slick with blood from your passage. You finally arrive at the escapement and, with one final supreme effort, pull the mirror down on top of you. The pain is immediately gone as you disappear into the Mirrorwise.""",
-                "failure_text": """You crawl, slug-like across the floor, your lungs filling with blood. The last thing you see is that bile-yellow eye.""",
+                "failure_text": """You crawl, slug-like across the floor, your lungs filling with blood. There is no escape.""",
                 "next_state_success": 200,
                 "next_state_failure": 200,
                 "apprehension_change_success": 2,
@@ -782,7 +790,7 @@ You stagger towards the mirror, falling to a crawl.""",
 
     {
         "story_state": 195,
-        "text": """You grasp the mirror, girding yourself for your coming journey.
+        "text": """You stoop to grasp the mirror, girding yourself for your coming journey.
 
 You take a deep breath and a slow exhale.
 
@@ -793,7 +801,9 @@ Now, you are ready. You are ready now.""",
                 "stat": "dangerous",
                 "difficulty": 3,
                 "success_text": """You pitch forward with a diver's grace, breaking the glass cleanly.""",
-                "failure_text": """Your mind is unwilling to leave the clocktower, no matter the threat. Your body must insist.""",
+                "failure_text": """Your mind is unwilling to leave the clocktower, no matter the threat. Your body must insist.
+
+The break is not clean.""",
                 "next_state_success": 200,
                 "next_state_failure": 200,
                 "apprehension_change_success": 2,
@@ -807,12 +817,12 @@ Now, you are ready. You are ready now.""",
 # Mirrorwise Transition 2 story_state 200
     {
         "story_state": 200,
-        "text": """Even braced against it, your mind rebels against the assault on your senses that is the Mirrorwise. You tumble and plunge through an ocean of oddity, again glimpsing ephemeral flashes of scenes framed in gold, silver, and tin: A capering titan, shackled to a spire of glass and bone. More colossi, lying long as terraced rows, bleeding from a thousand wounds. A great gate, a mile high and festooned with gibbets.
+        "text": """Even braced against it, your mind rebels against the assault on your senses that is the Mirrorwise. You tumble and plunge through an ocean of oddity, again glimpsing ephemeral flashes of scenes framed in silver, gold, and tin: A capering titan, shackled to a spire of glass and bone. More colossi, lying long as terraced rows, bleeding from a thousand wounds. A great gate, a mile high and festooned with gibbets.
 
 Your own reflection, magnified and duplicated a thousand times, fleeing through a mirror in the distance. <em>That</em> mirror, there!""",
         "options": [
             {
-                "text": """Your reflections leave a trail of innumerable bloody footprints. Track them.""",
+                "text": """Your reflections each leave a trail of bloody footprints. Track them.""",
                 "stat": "watchful",
                 "difficulty": 6,
                 "success_text": """So many yous, so much blood. All converging to a single point. A perfect spiral inscribed upon your senses leading to a silvered pane of thick-cut glass, now stained crimson. You throw yourself through.""",
@@ -825,12 +835,12 @@ Your own reflection, magnified and duplicated a thousand times, fleeing through 
                 "menace_change_failure": 10
             },
             {
-                "text": """Ignore the reflections. This is mere misdirection. Where do they naturally lead?""",
+                "text": """Ignore the reflections. This is misdirection. Where do they naturally lead?""",
                 "stat": "shadowy",
                 "difficulty": 6,
                 "success_text": """It is legerdemain, and clumsy at that. With a pang of embarrassment, you recognise your own work at play. If you were you (which you are), which way would you go now?
 You turn from your reflection's trail and kick through a silvered pane of thick-cut glass, traced with crimson.""",
-                "failure_text": """Misdirection? Maybe, but it drew your attention effectively enough. Swivelling away from the prescribed route, you almost catch too late your true destination: a silvered pane of thick-cut glass, stained crimson at the edges. Your hand catches painfully on the edge as you lever your way through.""",
+                "failure_text": """Misdirection? Perhaps, but it drew your attention effectively enough. Swivelling away from the prescribed route, you almost see too late your true destination: a silvered pane of thick-cut glass, stained crimson at the edges, drifting below you. Your hand catches painfully on the edge as you lever your way through.""",
                 "next_state_success": 201,
                 "next_state_failure": 201,
                 "apprehension_change_success": 2,
@@ -856,7 +866,7 @@ You turn from your reflection's trail and kick through a silvered pane of thick-
                 "stat": "persuasive",
                 "difficulty": 6,
                 "success_text": """Your reflection pauses, turning, one foot already through a silvered pane of thick-cut glass, laced with crimson lines. They extend a hand, pulling you through with them.""",
-                "failure_text": """Your reflection turns, revealing a red-rimmed smile, blood dripping from their lips. A thousand iterations start towards you, grasping hands clawing at your frame. You feel your clothes rip as you push past, through a silvered pane of thick-cut glass, stained crimson.""",
+                "failure_text": """Your reflection turns, revealing a red-rimmed smile, blood dripping from their lips. A thousand iterations of yourself start towards you, grasping hands clawing at your frame. You feel your clothes rip as you push past, through a silvered pane of thick-cut glass, stained crimson.""",
                 "next_state_success": 201,
                 "next_state_failure": 201,
                 "apprehension_change_success": 2,
@@ -880,7 +890,7 @@ Sucking in short, shallow breaths, you take a quick damage assessment of your ba
 
 It is small and unadorned. It does not appear to open, although a crank on the side turns easily enough. You pocket it again and gaze about you, your head pounding.
 
-You stand in a cavernous chamber, intersected by black thread, twined and looped in a serpentine sprawl. There are no exits apparent where the distant walls rise""",
+You stand in a cavernous chamber, intersected by black thread, twined and looped in a serpentine sprawl. There are no exits apparent where the distant walls rise.""",
         "options": [
             {
                 "text": """Follow the twisting thread. Where does it come from?""",
@@ -906,7 +916,7 @@ You teeter on the edge of a darkened well. Threads converge here, of course. You
                 "text": """If in doubt, follow your nose. You have no shortage of olfactory stimulation.""",
                 "stat": "shadowy",
                 "difficulty": 7,
-                "success_text": """Reluctant though you are to inhale more of the stomach-turning stench, you bend low and take a deep breath, swallowing down the bile that rises in response. The scent, as far as you can tell, is strongest where the thread converges. You chose one particularly large tangle and follow it, your nose confirming your suspicions.
+                "success_text": """Reluctant though you are to inhale more of the stomach-turning stench, you bend low and suck in a deep breath, swallowing down the bile that rises in response. The scent, as far as you can tell, is strongest wherever the thread converges. You chose one particularly large tangle and follow it, your nose confirming your suspicions.
 
 You soon come across an opening in the stone: a darkened well, down which the thread plunges.""",
                 "failure_text": """Bloodhound, you are not.
@@ -959,9 +969,9 @@ It is a relief to feel your feet sink into the viscera coating the floor.""",
 
     {
         "story_state": 220,
-        "text": """Ignoring the awful stench and the cold blood seeping into your socks, you feel for the thread again. They continue: you trace their path along distressingly sticky walls, emerging into another chamber, almost as large as the one you exited above. This chamber, too, is bathed in a pale luminescence. Veins of glass wind through granite, reflecting off the mica within.
+        "text": """Ignoring the awful stench and the cold blood seeping into your socks, you feel for the thread again. They continue: you trace their path along distressingly sticky walls, emerging into another chamber, almost as large as the one you exited above. This chamber, too, is bathed in a pale luminescence. Veins of glass wind through granite, their light reflecting off the mica within.
 
-Against the far wall, a titanic corpse is slumped, threads winding over and under his body, roots enveloping a forgotten object. It was a man, you think. A king, judging by his crown. A god, judging by his size. His regal countenance is drawn, his head bowed. His blood is cold. It flows freely from the corpse, carving a route through the thick dust of the floor. It spiders out, a copper-scented delta of effluvia.
+Against the far wall, a titanic corpse is slumped, threads winding over and under his body: roots enveloping a forgotten object. It was a man, you think. A king, judging by his crown. A god, judging by his size. His regal countenance is drawn, his head bowed. His blood is cold. It flows freely from the corpse, carving a route through the thick dust of the floor. It spiders out, a copper-scented delta of effluvia.
 
 His eyes flicker open when you approach.
 
@@ -984,7 +994,7 @@ Your body is wracked by sudden, unimaginable pain. Your eyes roll back into your
 
 You come to, slumped in the river, your clothes washed crimson by the flow of blood.
 
-The corpse regards you lifelessly.""",
+The corpse regards you impassively.""",
                 "next_state_success": 230,
                 "next_state_failure": 230,
                 "apprehension_change_success": 5,
@@ -1002,14 +1012,16 @@ The corpse regards you lifelessly.""",
 
 One long finger extends. Where he points, a doorway blooms in the granite wall.
 
-You bow, touch your forelock, and exit.""",
+You bow low. You might even chance touching your forelock.
+
+It is best to be thorough when thanking a god.""",
                 "failure_text": """The corpse shifts his gaze to you.
 
 Tears begin to flow down his cheeks, great golden droplets mingling with the deep incarnadine of his blood.
 
 You feel your face crumpling in sympathy. You are caught by wracking sobs, weeping freely into the river.
 
-Minutes pass. Eventually, you realise that he has ceased his tears. When you look up again, his eyes are closed, his face slack. To your left, a doorway stands in the granite wall.""",
+Minutes pass. Eventually, you realise that he has ceased his tears. When you look up again, his eyes are closed, his face slack. To your left, a darkened doorway stands in the granite wall.""",
                 "next_state_success": 240,
                 "next_state_failure": 240,
                 "apprehension_change_success": 2,
@@ -1028,10 +1040,12 @@ Minutes pass. Eventually, you realise that he has ceased his tears. When you loo
                 "text": """Drink again. <em>This is, if possible, an even worse idea</em>""",
                 "stat": "dangerous",
                 "difficulty": 100,
-                "success_text": """Well done, this should not be possible.""",
+                "success_text": """Well done, this should not be possible. Unfortunately, it truly <em>was</em> a bad idea.
+
+Sorry.""",
                 "failure_text": """Again, you stoop to drink.
 
-As soon as the blood meets your lips, you sink into unconsciousness.""",
+As soon as the blood meets your lips, your vision begins to fade. You fancy that you see the corpse’s lips twitch upwards.""",
                 "next_state_success": 230,
                 "next_state_failure": 230,
                 "apprehension_change_success": 0,
@@ -1065,7 +1079,7 @@ To your left, a doorway stands in the granite where there was none before.""",
         "story_state": 240,
         "text": """You must go onwards.
 
-And so you stumble down the passage, the floor thick with thread. There is no light here: you grope blindly for the walls as you lumber onwards.
+And so you stumble through the doorway and down the passage. The floor is thick with thread. There is no light here: you grope blindly for the walls as you lumber onwards.
 
 Your heartbeat is heavy in your ears. No. Not your heartbeat. <em>A</em> heartbeat.
 
@@ -1075,7 +1089,7 @@ Your legs are tiring, but you must go onwards.
 
 You must go onwards.
 
-Eventually, you see light ahead. You throw yourself forwards in a final effort, your leaden feet snagging on the carpet of thread to send you sprawling out into another chamber, this one larger than the previous two combined. Endless spools of thread weave across the floor. Star-like nodes of glass twinkle in a distant roof. Here, the scent of blood is lesser, left behind with the corpse of the god-king.
+Eventually, there is light ahead. You throw yourself forwards in a final effort, your leaden feet snagging on the fibrous floor to send you sprawling out into another chamber, this one larger than the previous two combined. Endless spools of thread weave across the stone. Star-like nodes of glass twinkle in a distant roof. Here, the scent of blood is lesser, left behind with the corpse of the god-king.
 
 Upon the wall at the far end of the cavernous room, a giant, charcoal-grey heart is affixed. You watch as it pulses with a slow rhythm.""",
         "options": [
@@ -1131,7 +1145,7 @@ The visions fade, and you are standing just as you were before. The heart beats.
 
 You turn the crank, and immediately your vision darkens. You are no longer in the dim chamber, stood in front of the great, grey heart. A rush of images comes to you: A glittering city of cut gemstones, almost painful in its gaudy brilliance. An impossible Tower of Babel spire, reaching out of sight. A bright stained glass cathedral, bristling with artillery, resting on mile-long caterpillar tracks. Grinning men in cracked greasepaint kicking a figure in the mud. An island-sized raft of sugar-spun bodies, fused together in caramel and floating in a treacle sea. The captain - it takes you a second to recognise her without her hat - smiling, laughing, her arm around the shoulder of a crewmate. The captain again, kneeling in front of a tree laden with golden fruit.
 
-The visions fade. You are knelt before the heart, both hands filled with thread. They twitch and stray towards your eyes. You start to your feet with a yell. The heart beats.""",
+The visions fade. You are knelt before the heart, both hands clutching fistfuls of thread. They twitch and stray towards your eyes. You start to your feet with a yell. The heart beats.""",
                 "next_state_success": 275,
                 "next_state_failure": 275,
                 "apprehension_change_success": 5,
@@ -1179,7 +1193,7 @@ THOU SHALT NOT WANT."
 
 There is a pause. Two heartbeats long.
  
-"DO NOT LEAVE ME"
+"DO NOT LEAVE ME."
 
 You look up at the heart, hanging in its web of thread.
 
@@ -1195,15 +1209,14 @@ You count seven pulses of the great, grey heart, before finally, it lowers the m
 
 You thank the heart. It remains silent. You take one final breath, then plunge through.
 
-The Mirrorwise is familiar now, but it has never been this ordered. Frames slot into place, setting in patterns ahead of you like rail lines. A thread - invisible, though insistent - pulls you onwards, guiding you towards a distant mirror through which gaslight blooms. Ever faster are you urged forward, until you tumble unceremoniously though the mirror into a bathtub, mercifully unoccupied.
-""",
+The Mirrorwise is familiar now, but it has never been this ordered. Frames slot into place, setting in patterns ahead of you like rail lines. A thread - invisible, though insistent - pulls you onwards, guiding you towards a distant mirror through which gaslight blooms. Ever faster are you urged forward, until you tumble unceremoniously though the mirror into a bathtub, mercifully unoccupied.""",
                 "failure_text": """There is a long silence.
 
 You wait for perhaps a minute before the heart finally answers.
 
-"NO".
+"NO."
 
-The mirror retreats into the folds of the heart. You stand there. Utterly alone.""",
+The mirror retreats into the folds of the heart. You stand before it. Utterly alone.""",
                 "next_state_success": 300,
                 "next_state_failure": 300,
                 "apprehension_change_success": 0,
@@ -1221,16 +1234,16 @@ The heart is silent for a long time.
 
 Then, finally:
 
-"THANK YOU".
+"THANK YOU."
 
 You smile.""",
                 "failure_text": """There is a long silence.
 
 You wait for perhaps a minute before the heart finally answers.
 
-"YOU LIE".
+"YOU LIE."
 
-The mirror retreats into the folds of the heart. You stand there. Utterly alone.""",
+The mirror retreats into the folds of the heart. You stand before it. Utterly alone.""",
                 "next_state_success": 290,
                 "next_state_failure": 290,
                 "apprehension_change_success": 0,
@@ -1245,7 +1258,7 @@ The mirror retreats into the folds of the heart. You stand there. Utterly alone.
         "story_state": 290,
         "text": """It is comfortable in the twilight glimmer of the glass-node stars. The heart has summoned entire worlds for you. You have tasted manifold delights that you once could only have dreamt of. Every day is a cavalcade of pleasures, every night brings more still.
 
-"DO NOT LEAVE ME". It had asked.
+"DO NOT LEAVE ME", it had asked.
 
 And so you hadn't.""",
         "options": [
