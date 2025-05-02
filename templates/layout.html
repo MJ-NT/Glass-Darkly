@@ -31,7 +31,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <!-- left-aligned nav items ('About' always visible) -->
-                    <ul class="navbar-nav me-auto mt-2">
+                    <ul class="navbar-nav me-auto">
                         <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/about">About</a></li>
                         {% if session["user_id"] %}
                             <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/account">Account</a></li>
@@ -39,7 +39,7 @@
                         {% endif %}
                     </ul>
                     <!-- right-aligned nav items -->
-                    <ul class="navbar-nav ms-auto mt-2">
+                    <ul class="navbar-nav ms-auto">
                         {% if session["user_id"] %}
                             <li class="nav-item px-2 py-2"><a class="nav-link rounded" href="/logout">Log Out</a></li>
                         {% else %}

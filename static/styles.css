@@ -16,7 +16,7 @@ h1 {
     font-size: 2.25rem;
     margin: 0.5rem 0 1.5rem 0;
     padding: 1.25rem 2rem;
-    border: 4px double #000000;
+    border: 5px double #353535;
     border-radius: 0.5rem;
     background-color: #ffffff;
     display: inline-block;
@@ -24,7 +24,7 @@ h1 {
 
 
 .about-links {
-    color: #762956;
+    color: #4f1838;
     text-decoration: dotted;
 }
 
@@ -38,40 +38,42 @@ h1 {
     text-decoration: none;
 }
 
-.btn {
-    font-size: 1.1rem
+.btn-dark {
+    background-color: #353535;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    border: 5px double #f0f0f0;
 }
 
 .btn-dark:hover {
     background-color: #f0f0f0;
     color: #000000;
-    border-color: #f0f0f0;
+    border: 5px double #353535;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .card { 
-    border: 2px solid #000000; 
+    border: 5px double #353535; 
     padding: 10px; 
     margin: 10px;
 }
 
 .custom-heading {
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
 .custom-radio .form-check-input:checked {
     background-color: #292929;
-    border-color: #000000;
+    border-color: #353535;
 }
 
 .custom-radio .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem #000000;
+    box-shadow: 0 0 0 0.1rem #353535;
 }
 
 .custom-radio:hover {
     background-color: #f0f0f0;
-    border-color: #000000;
+    border-color: #353535;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }
@@ -118,7 +120,7 @@ h1 {
 .key-img {
     max-height: 300px;
     object-fit: contain;
-    border: 1px solid #adadad;
+    border: 5px double #adadad;
     border-radius: 0.25rem;
     padding: 10px;
     background-color: #e7e7e7;
@@ -126,10 +128,10 @@ h1 {
 
 .key-img:hover {
     transform: scale(1.05);
-    background-color: #762956;
-    border: 1px solid #353535;
+    background-color: #4f1838;
+    border: 5px double #353535;
     cursor: grab;
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .key-img:active {
@@ -139,7 +141,7 @@ h1 {
 .key-img-plain {
     max-height: 300px;
     object-fit: contain;
-    border: 1px solid #353535;
+    border: 5px double #353535;
     border-radius: 0.25rem;
     padding: 10px;
     background-color: #353535;
@@ -151,19 +153,19 @@ h1 {
     border-left: 4px solid #68747f;
     font-style: italic;
     font-family: 'Georgia', serif;
-    color: #343a40;
+    color: #353535;
     box-shadow: 0 0 10px #adadad;
     border-radius: 0.25rem;
 }
 
 .navbar-brand:hover {
-    background-color: #000000;
+    background-color: #353535;
     color: #f0f0f0;
-    border-color: #000000;
+    border-color: #353535;
 }
 
 .nav-link:hover {
-    background-color: #000000;
+    background-color: #353535;
     color: #f0f0f0;
 }
 
@@ -174,7 +176,7 @@ h1 {
 
 .page-wrapper {
     background-color: #f5f5f5;
-    border: 1px solid #e7e7e7;
+    border: 5px double #e7e7e7;
     border-radius: 0.5rem;
 }
 
@@ -195,9 +197,9 @@ h1 {
     /* Style */
     padding: 10px;
     background-color: #e7e7e7;
-    border: 5px solid #000000;
+    border: 5px solid #353535;
     border-radius: 10px;
-    box-shadow: 0 4px 10px #000000;
+    box-shadow: 0 4px 10px #353535;
 }
 
 .progress {

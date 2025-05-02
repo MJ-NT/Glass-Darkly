@@ -163,7 +163,7 @@ Some of the most notable changes:
 - I added a page-wrapper class (and added it to the `<main>` tag in layout.html) to apply a paler container wrapper around content (as the body has a dark theme).
 - I added borders to headings and altered the Bootstrap card class to apply borders as well. In the myself page, for example, they provide a cleaner layout.
 - I added pseudo-classes to buttons, the nav-bar links, and ‘about’ page hyperlinks to make the pages more dynamic and tonally consistent.
-- I added a fade-in class to the challenges to fade in content using the `@keyframes` rule.
+- I added a fade-in class to the card-body and alert divs in challenge.html to fade in challenge text and story text respectively using the `@keyframes` rule.
 - I implemented a `prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
 - I implemented a `lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
 - I implemented a `key-img` class to create tonally-appropriate borders for the images I added. I then added hover effects with `key-img:hover`. I also added the class `key-hover-text` for text that I wanted to appear below the images. Initially, I was getting hover effects when mousing over the parent container for the image, so I used the adjacent sibling combinator `+` in ```.key-img:hover + .key-hover-text {
