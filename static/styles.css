@@ -25,7 +25,7 @@ h1 {
 
 .about-links {
     color: #4f1838;
-    text-decoration: dotted;
+    text-decoration: underline dotted;
 }
 
 .about-links:hover {
@@ -152,7 +152,7 @@ h1 {
     background-color: #e7e7e7;
     border-left: 4px solid #68747f;
     font-style: italic;
-    font-family: 'Georgia', serif;
+    font-family: 'Georgia', serif; /* Intentional style change */
     color: #353535;
     box-shadow: 0 0 10px #adadad;
     border-radius: 0.25rem;

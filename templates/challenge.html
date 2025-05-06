@@ -5,15 +5,11 @@
 {% endblock %}
 
 {% block content %}
+{% import "macros.html" as macros %}
 <div class="container-sm mt-2 mb-3">
     {% if challenge %}
         <div class="row justify-content-center">
-            <div class="col-lg-2 col-md-2 col-sm-5 mt-3 mb-2">
-                <div class="key-container d-flex flex-column align-items-center">
-                    <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
-                    <div class="key-hover-text">Raskovnik</div>
-                </div>
-            </div>
+            {{ macros.challenge_keys_col('key3-vert.png', 'Key 3', 'Raskovnik') }}
             <div class="col-lg-7 col-md-8 col-sm-8 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-body fade-in">
@@ -38,23 +34,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-5 mt-3 mb-2">
-                <div class="key-container d-flex flex-column align-items-center">
-                    <img src="{{ url_for('static', filename='images/key3-vert.png') }}" class="img-fluid key-img" alt="Key 3">
-                    <div class="key-hover-text">Exodus</div>
-                </div>
-            </div>
+            {{ macros.challenge_keys_col('key3-vert.png', 'Key 3', 'Exodus') }}
         </div>
     {% endif %}
 
     {% if story_text %}
         <div class="row justify-content-center">
-            <div class="col-lg-2 col-md-2 col-sm-5 mt-3 mb-2">
-                <div class="key-container d-flex flex-column align-items-center">
-                    <img src="{{ url_for('static', filename='images/key1-vert.png') }}" class="img-fluid key-img" alt="Key 1">
-                    <div class="key-hover-text">Do not leave.</div>
-                </div>
-            </div>
+            {{ macros.challenge_keys_col('key1-vert.png', 'Key 1', 'Do not leave.') }}
             <div class="col-md-8">
                 <div class="alert alert-light border border-dark fade-in mt-2" role="alert">
                     <span class="story-text">{{ story_text | replace('\n', '<br>') | safe  }}</span>
@@ -69,12 +55,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-2 col-sm-5 mt-3 mb-2">
-                <div class="key-container d-flex flex-column align-items-center">
-                    <img src="{{ url_for('static', filename='images/key1-vert.png') }}" class="img-fluid key-img" alt="Key 1">
-                    <div class="key-hover-text">Do not leave.</div>
-                </div>
-            </div>
+            {{ macros.challenge_keys_col('key1-vert.png', 'Key 1', 'Do not leave.') }}
         </div>
     {% endif %}
 </div>

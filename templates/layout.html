@@ -53,7 +53,7 @@
 
         <!-- Flash Messages in header -->
         {% if get_flashed_messages() %}
-            <header>
+            <header class="container-sm">
                 {% for message in get_flashed_messages(with_categories=true) %}
                     <div class="alert alert-{{ message[0] }} mb-0 text-center" role="alert">
                         {{ message[1] }}
@@ -69,7 +69,7 @@
 
         <!-- Footer -->
         <footer class="footer mt-auto py-2 bg-dark text-white text-center">
-            <p class="footer-text">Created by Matt Taylor</p>
+            <p class="footer-text" role="contentinfo">Created by Matt Taylor</p>
         </footer>
 
     </body>
