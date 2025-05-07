@@ -433,7 +433,7 @@ def register():
         
         # Ensure password is at least 5 characters long
         elif len(password) < 5:
-            flash("Password must be at least 8 characters long", "danger")
+            flash("Password must be at least 5 characters long", "danger")
             return redirect("/register")
         
         # Introduce try and except error handling - Ensure username is not already taken

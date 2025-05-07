@@ -115,7 +115,7 @@ The `/register` route is very similar to the login route, using the same method 
 
 Finally, the `/logout` route clears session data, flashes a success message and redirects the user back to the login page.
 
-### challenges.py
+### `challenges.py`
 
 This file contains a list of dictionaries containing the ‘challenges’ (i.e. the story content). Each challenge contains a `story_state`, text describing the challenge, and an inner list of dictionaries containing the options available to address the challenge.
 
@@ -131,7 +131,7 @@ This file contains functions to be imported into app.py.
 `get_db_connection` connects to `game.db`. By default, sqlite3 represents each row as a tuple. Using `conn.row_factory = sqlite3.Row` returns a dictionary, allowing access to the column names when calling the function, as per the documentation: “Row provides indexed and case-insensitive named access to columns, with minimal memory overhead and performance impact over a tuple.” [source](https://docs.python.org/3/library/sqlite3.html)
 `login_required(f)` is a decorator function that only allows the original function f (such as account or myself) to run if `session["user_id"]` exists (i.e. the user is logged in).
 
-### import_stories.py
+### `import_stories.py`
 
 This file imports the challenges from the `challenges.py` file. It connects to ‘game.db’, deletes old data from the challenges table, then uses the imported challenges to repopulate it using `SQL INSERT`.
 

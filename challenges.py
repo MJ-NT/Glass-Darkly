@@ -194,6 +194,7 @@ You have to hope that this is not what the captain intended for you. You feel th
 
 You take a deep breath.""",
                 "failure_text": """Try as you might, you cannot quell the rising panic building inside you. Your breaths come short and shallow. Your heartbeat thunders in your ears.
+
 <em>A-gain</em>
 <em>A-gain</em>
 <em>A-gain</em>""",
@@ -238,6 +239,7 @@ Your howls of protest are answered, eventually, as you hear the soil shifting ab
 But it's not enough.
 
 If any god is listening, they do so only to mock you. You can hear your heart, joined in chorus by others here in the dark earth.
+
 <em>A-gain</em>
 <em>A-gain</em>
 <em>A-gain</em>""",
