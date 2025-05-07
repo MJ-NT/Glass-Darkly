@@ -1,5 +1,5 @@
 # Through Glass Darkly
-#### Video Demo:  <URL HERE TODO>
+#### Video Demo: [Through Glass Darkly](https://www.youtube.com/watch?v=SkttiSVtzig&t=3s)
 
 ## Introduction
 
