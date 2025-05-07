@@ -14,19 +14,19 @@ In it, the player character takes on the role of a ‘visitant’, a being stole
 I created the game as my final project for Harvard's CS50 course.
 
 The backend is built with Flask, a lightweight Python web framework, and uses a SQLite database to manage user data and story progress.
-The frontend uses HTML, CSS, and JavaScript, with Bootstrap providing layout and styling.
+The frontend uses HTML, CSS, and JavaScript, with Bootstrap providing additional layout and styling.
 
 ## Background and creative process
 
 _A House of Many Doors_ (henceforth referred to as HOMD) was a solo effort, written and designed by the one-man team of Harry Tuffs. It is a behemoth: wildly ambitious in scope, both narratively and technically. According to an AMA he ran on the game's discord, Tuffs had never written so much as a 'Hello World' before creating HOMD, and by his own admission, the code - written using GameMaker - is 'nightmare spaghetti'. Despite the enjoyment he gained from writing the content, it’s clear that the game became unwieldy due to this coding quagmire.
 
-Perhaps unsurprisingly then, after landing on the idea to create a browser game based on the world of HOMD, I was acutely aware of the limits of my own technical knowhow. My comparative deficiencies as a writer aside, I needed to temper my ambitions to make what I wanted narratively achievable in code, particularly given my shorter development timeframe.
+Perhaps unsurprisingly then, after landing on the idea to create a browser game based on the world of HOMD, I was acutely aware of the limits of my own technical knowhow. Given my shorter development timeframe, I needed to temper my ambitions to make what I wanted narratively achievable in code.
 
-I therefore decided to narrow the scope of the game to a single activity within the engaging whole: delves. These are 'dungeons' of a sort: contained narrative experiences in which the player character explores a series of descending floors, finally arriving at a central location with a final revelation or choice (that in the original HOMD would have consequences that stretched into the game exterior to the delve).
+I therefore decided to narrow the scope of the game to a single activity within the engaging whole: delves. These are 'dungeons' of a sort: contained narrative experiences in which the player character explores a series of descending floors, finally arriving at a central location with a final revelation or choice (that in HOMD would have consequences that stretched into the game exterior to the delve).
 
 In HOMD, the titular House contains 4 such delves: the Underbelly of Carapas, the Founder in Founder's Fire, the Svadilfari in Pannachak, and the Stupefaction Baths in Phobetor Quinn.
 
-For _Through Glass Darkly_, I opted to create a new delve. Since I wanted to explore as much of the world of HOMD as possible within my limited scope while also breaking new ground, I set both floors of my delve in regions of the House that do not feature a delve in the original HOMD (Ghoulwatch and the Empire of Thread, for those happy few familiar). Moving between floors is possible through the ‘Mirrorwise’, which is a feature of the fiction that can best be described as an alternate dimension that allows travel between mirrors.
+For _Through Glass Darkly_, I opted to create a new delve. Since I wanted to explore as much of the world of HOMD as possible within my limited scope while also breaking new ground, I set both floors of my delve in regions of the House that do not feature a delve in the original HOMD (Ghoulwatch and the Empire of Thread, for those happy few familiar). Moving between floors is possible through the ‘Mirrorwise’, which is a feature of the fiction that can best be described as an alternate dimension allowing travel between mirrors.
 
 ### Player stats
 
