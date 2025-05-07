@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 storyDiv.classList.remove("d-none");
 
                 // Rebuild the amount dropdown menu
-                const amountSelect = document.getElementById("amount");
+                const amountSelect = document.getElementById("amount-select");
                 amountSelect.innerHTML = '<option value="" disabled selected>Select one</option>';
 
                 // Populate the amount dropdown with options from 1 to the new number of apprehensions
