@@ -9,6 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 # Load environment variables from .env file
 load_dotenv()
+debug = os.getenv("DEBUG", "False") == "True"
 
 app = Flask(__name__)
 CORS(app)  # Allow frontend requests (ChatGPT suggestion)
@@ -501,4 +502,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=debug)

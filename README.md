@@ -1,5 +1,5 @@
 # Through Glass Darkly
-#### Video Demo:  <URL HERE>
+#### Video Demo:  <URL HERE TODO>
 
 ## Introduction
 
@@ -7,7 +7,7 @@ _Through Glass Darkly_ is an interactive fiction browser game based on the world
 
 In it, the player character takes on the role of a ‘visitant’, a being stolen from another world by the parasite dimension that is the ‘House’.
 
-> It is a mad, disturbing sprawl of wonders and terrors, but you don’t have time to worry about all that right now. Plucked from the fantastic dark, only to be pitched through a mirror and set adrift in a kaleidoscopic sea, you are propelled through the House. Blood quickened by the heart.
+> It is a mad, disturbing sprawl of wonders and terrors, but you don’t have time to worry about all that right now. Plucked from the fantastic dark, only to be pitched through a mirror and set adrift in a kaleidoscopic sea, you are propelled through the House. Blood, quickened by the heart.
  
 > Find the next mirror. Delve ever deeper. Do not look back.
 
@@ -36,7 +36,7 @@ With the stats decided upon, I turned to the method of progression. In _Fallen L
 
 After tinkering with this kind of system in code, I decided that it would be far easier to return to my original inspiration and implement a system like that in HOMD, or _Sunless Seas_, another Failbetter game. In these games, stats are improved through spending a resource. In HOMD, this resource is 'Apprehensions', gained through progression in various stories (in addition to visiting locations and writing poetry!). For my game, I settled on awarding a changing number of Apprehensions through successes and failures on each challenge. Success awards more Apprehensions than failure in a challenge, and some challenges award more than others.
 
-Finally, I abstracted away health, sanity, or other named ‘threat level’ stats to one single stat called ‘Menace’, which increases when players fail certain challenges, and sometimes when they succeed on others. When Menace reaches 100, the player must restart the game (see ‘overcome.html’).
+Finally, I abstracted away health, sanity, or other named ‘threat level’ stats to one single stat called ‘Menace’, which increases when players fail certain challenges, and sometimes when they succeed on others. When Menace reaches 100, the player must restart the game (see `overcome.html`).
 
 ### Narrative structure
 
@@ -71,7 +71,7 @@ The delves branch and bottleneck, notably at the transitions (or at the Ending).
 
 ## Python files
 
-### app.py:
+### `app.py`
 
 This file contains the bulk of my code.
 
@@ -88,15 +88,15 @@ To protect against session tampering and common web vulnerabilities I also used 
 
 SESSION_COOKIE_SAMESITE = "Lax" helps prevent CSRF (Cross-Site Request Forgery) attacks..
 
-The `/` route queries the database for the user’s username and renders the home page, passing that username to index.html.
+The `/` route queries the database for the user’s username and renders the home page, passing that username to `index.html`.
 
 The `/about` route renders the about page.
 
 The `/account` route queries the database for the user’s username and password, checks the user exists, then, if reached by POST, processes changing their password, handling all related errors (“Invalid current password”, “New password cannot be the same as the old password”, etc). The new password is hashed and the users table updated.
 
-The `/challenge` route first connects to the database and queries the Menace level for the user logged in. If `result["menace"] >= 100` then the route redirects to overcome.html. Otherwise, the route queries for the user’s `story_state` and subsequently queries for the options associated with the challenge with that `story_state`. If no options are found, then an ending message `story_text` is passed into the challenge.html.
+The `/challenge` route first connects to the database and queries the Menace level for the user logged in. If `result["menace"] >= 100` then the route redirects to `overcome.html`. Otherwise, the route queries for the user’s `story_state` and subsequently queries for the options associated with the challenge with that `story_state`. If no options are found, then an ending message `story_text` is passed into the `challenge.html`.
 
-If the user reached the route via the GET method, it fetches all 4 user stats, creates a dictionary called `challenge_data` and iterates through each challenge option to calculate the probability of success using the formula Fallen London uses: `success_chance = int((SCALER * stat_value) / opt["difficulty"] * 100)`, where SCALER is the constant 0.6 defined at the top of `app.py`. The route then appends the resulting data to the ‘options’ key as a list of dictionaries, containing the option’s text, number, the name of the stat it tests and the chances of success. These are then rendered in the challenge.html.
+If the user reached the route via the GET method, it fetches all 4 user stats, creates a dictionary called `challenge_data` and iterates through each challenge option to calculate the probability of success using the formula Fallen London uses: `success_chance = int((SCALER * stat_value) / opt["difficulty"] * 100)`, where SCALER is the constant 0.6 defined at the top of `app.py`. The route then appends the resulting data to the ‘options’ key as a list of dictionaries, containing the option’s text, number, the name of the stat it tests and the chances of success. These are then rendered in the `challenge.html`.
 
 If the user reached the route via POST, it extracts the selected option from form data, then implements a generator expression to find the chosen option and handle errors with the default value None for the next() function. The route then queries for the user’s stat level for the stat tested by the chosen option, identifies the difficulty of the chosen option and calculates the user’s success chance according to the aforementioned formula. User success is measured against a random number generator: 
 ```
@@ -107,7 +107,7 @@ The user’s Apprehensions, Menace, and `story_state` are all updated according 
 
 In my `/login` route, a user’s username and password are queried in the users table, redirecting them to the homepage on a success, flashing a success message. I ran into a problem here whereby clearing session data with `session.clear()` in the `/login` (and `/register`) routes caused the flashed error messages (for “invalid username or password” etc) to not appear upon redirecting. I have implemented a workaround by saving the flashed messages as a list via `session.get("_flashes", [])` and reflashing once the session was cleared. With this method, no sensitive information is retained, the flashed messages are stored client-side, and memory concerns are minimal since the messages are text-only.
 
-The `/myself` route queries the user and their stats from the database and assigns the `story_text` to None. If the user reached the route via GET, the myself.html page is rendered with the user’s name, current stats and no `story_text`. If the user reaches the route via POST, the route gets the stat and amount from the form, handles Value and Type errors out of an abundance of caution (since the form uses a dropdown menu) and instances where the user doesn’t have enough Apprehensions to improve the stat. It then defines valid stats to guard against SQL-injection attacks so it can use an f-string to update the user’s stats and Apprehensions. The user’s stats are then refetched and the `story_text` is created based on the stat improvement.
+The `/myself` route queries the user and their stats from the database and assigns the `story_text` to None. If the user reached the route via GET, the `myself.html` page is rendered with the user’s name, current stats and no `story_text`. If the user reaches the route via POST, the route gets the stat and amount from the form, handles Value and Type errors out of an abundance of caution (since the form uses a dropdown menu) and instances where the user doesn’t have enough Apprehensions to improve the stat. It then defines valid stats to guard against SQL-injection attacks so it can use an f-string to update the user’s stats and Apprehensions. The user’s stats are then refetched and the `story_text` is created based on the stat improvement.
 
 The `/overcome` route renders `overcome.html` when reached by GET. This only happens via the challenge route when the user’s Menace is greater than or equal to 100. If reached via the POST method, the route will connect to the database and reset the user’s stats to 1, their Menace to 0 and their `story_state` to 0, flashing a success message and returning them to the homepage. This will occur when a user clicks the “Begin Anew” button on the Overcome page or the “Restart Game” button on the Challenge page when `story_text` is present.
 
@@ -124,7 +124,7 @@ Each option has within it the text, the stat it tests against, the difficulty of
 Originally, I used a json file (‘stories.json’). With this approach, I found I had to use a lot of escape characters and unicode codes (e.g. /n for line breaks or \u2018 and \u2019 for curly apostrophes) in my text. I therefore switched to python, where triple quotes can be used for multi-line strings and escape characters are much easier to handle.
 
 
-### helpers.py
+### `helpers.py`
 
 This file contains functions to be imported into app.py.
 
@@ -140,7 +140,7 @@ Since each challenge entry may have multiple options (i.e. the aforementioned li
 It prints a message in the terminal upon success.
 
 
-### reset_db.py
+### `reset_db.py`
 
 This file connects to game.db, drops any existing tables therein, and recreates them in the database. It prints a message in the terminal on success.
 
@@ -149,21 +149,21 @@ I created this file because I found that, as my game increased in complexity, I 
 
 ## Static files
 
-### script.js
+### `script.js`
 
 This file contains almost all the Javascript used in the templates. The bulk of the file is an asynchronous AJAX handler for submitting the stat form (i.e. spending your Apprehensions) on the ‘Myself’ page. It prevents the default page reload from submitting the form, packages the form data, sends it to the server and retrieves it as JSON, then updates the page dynamically with the new stat levels and the new number of Apprehensions available to spend.
 
 
-### styles.css
+### `styles.css`
 
 The css file expands upon the styling already implemented in Bootstrap.
 
 Some of the most notable changes:
 - I altered the colour scheme, margins, padding, and text-alignment of multiple elements, in addition to font-family and font-size, which was important to establish the tone of the game.
-- I added a page-wrapper class (and added it to the `<main>` tag in layout.html) to apply a paler container wrapper around content (as the body has a dark theme).
+- I added a page-wrapper class (and added it to the `<main>` tag in `layout.html`) to apply a paler container wrapper around content (as the body has a dark theme).
 - I added borders to headings and altered the Bootstrap card class to apply borders as well. In the myself page, for example, they provide a cleaner layout.
 - I added pseudo-classes to buttons, the nav-bar links, and ‘about’ page hyperlinks to make the pages more dynamic and tonally consistent.
-- I added a fade-in class to the card-body and alert divs in challenge.html to fade in `challenge_text` and `story_text` respectively using the `@keyframes` rule.
+- I added a fade-in class to the card-body and alert divs in `challenge.html` to fade in `challenge_text` and `story_text` respectively using the `@keyframes` rule.
 - I implemented a `prelanding` class to create a smaller container box around the account, login and register forms that would change size dynamically with the content within.
 - I implemented a `lore-block` class to separate and emphasise the game-fiction blurb in the 'About' page.
 - I implemented a `key-img` class to create tonally-appropriate borders for the images I added. I then added hover effects with `key-img:hover`. I also added the class `key-hover-text` for text that I wanted to appear below the images. Initially, I was getting hover effects when mousing over the parent container for the image, so I used the adjacent sibling combinator `+` in ```.key-img:hover + .key-hover-text {
@@ -174,74 +174,74 @@ Some of the most notable changes:
 . In `layout.html`, I used Bootstrap’s `flex-grow-1` on the container class for `<main>` (which grows the container to take up all available space, pushing the footer down if there is not enough content to do so naturally).
 . Also in `layout.html`, I used Bootstrap’s `mt-auto` for the footer (which pushes the footer down to the bottom when the content is shorter than the screen height).
 
-### Images/
+### `Images/`
 
 This folder contains .png images of keys that I drew and added to the game to make it more visually appealing. Each key has variants.
 
 ## Templates
 
-### about.html
+### `about.html`
 
 This page describes what the game is. It references my influences and inspiration for the project - namely ‘A House of Many Doors’ and ‘Fallen London’ - and provides links to both. I also wrote a short in-fiction blurb here. The page contains a content warning and copyright, credits and technical information as well.
 
 I used `target="_blank" rel="noopener noreferrer">` within the anchor tags to have links open in new tabs and not be vulnerable to phishing attacks described in [this article](https://dev.to/ben/the-targetblank-vulnerability-by-example).
 
-### account.html
+### `account.html`
 
 This page offers users the option to change their password through submitting a form. Images provide more visual and thematic interest. A Bootstrap grid system with Jinja macros is used. With the ‘account’, ‘login’, and ‘register’ forms, I added labels with the `visually-hidden` class to improve accessibility.
 
-### challenge.html
+### `challenge.html`
 
 This page is the template for all challenges in the game. It uses Jinja syntax and conditional logic to dynamically display content based on the current challenge state. Specifically:
-1) Relevant key images are inserted into the Bootstrap grid layout using macros imported from macros.html.
+1) Relevant key images are inserted into the Bootstrap grid layout using macros imported from `macros.html`.
 2) The syntax in the line `{{ challenge.text | replace('\n', '<br>') | safe }}` ensures that newline characters in `challenge_text` (from the `challenges.py` dictionary) are preserved as HTML line breaks.
 3) If a challenge is available, it populates a form with radio input-type options to respond to the challenge.
 4) If `story_text` is available, it populates a customised alert box with this text (dependent on success or failure in the previous challenge) and implements a ‘Continue’ button. A ‘Restart Game’ button is always visible below the `story_text` and will reset the user’s `story_state` and stats via the `/overcome` route. A single line of inline Javascript prompts the user for confirmation should they click this button.
 
 NB: `story_text` is always present after any challenge. If no further `challenge_text` is available (i.e. the game has ended, which in my game occurs at story_state 301), the `/challenge` route populates `story_text` with an ending message directly in `app.py`.
 
-### index.html
+### `index.html`
 
 This is the home page. It contains images, a couple of headings and a button directing users to the challenge page (and back to the game). Bootstrap's grid system is again used.
 
-### layout.html
+### `layout.html`
 
-This file provides the base template for all other .html files using Jinja.
+This file provides the base template for all other HTML files using Jinja.
 In the `<head>`, it uses `<meta charset="UTF-8">` as is standard, and ensures mobile compatibility by using `<meta name="viewport" content="width=device-width, initial-scale=1.0">`. It links in custom CSS from styles.css and also Bootstrap CSS. Finally in the header, it links in custom javascript from script.js and also Bootstrap javascript, using `defer` to wait until HTML and CSS content are fully loaded before triggering.
 
 Because I altered the way messages are flashed by adding categories from Bootstrap (e.g. `danger` or `success`) to the routes, I also altered the global function `get_flashed_messages` to `get_flashed_messages(with_categories=true)`. This returns a list of tuples, where the first element is the category (i.e.success or danger), and the second element is the message itself. This is implemented within a Jinja conditional loop.
 
-In `<body>`, layout.html implements a navbar, using conditional logic and Jinja syntax to determine what is visible depending on whether a user is logged in. Alert messages (if present) are then handled in a `<header>` tag within a conditional loop. The page content of .html pages extending this template is held within `<main>` tags. Finally, the `<footer>` element contains the single credit line “Created by Matt Taylor”.
+In `<body>`, `layout.html` implements a navbar, using conditional logic and Jinja syntax to determine what is visible depending on whether a user is logged in. Alert messages (if present) are then handled in a `<header>` tag within a conditional loop. The page content of HTML pages extending this template is held within `<main>` tags. Finally, the `<footer>` element contains the single credit line “Created by Matt Taylor”.
 
-### login.html
+### `login.html`
 
 This page contains a form in which users submit their username and password to gain access to the game. Images provide more visual and thematic interest and the Bootstrap grid system is used with Jinja macros.
 
-### macros.html
+### `macros.html`
 
-This file contains Jinja macros for rendering Bootstrap grid layouts containing the images of keys across the site. It helps keep the HTML templates for account.html, challenge.html, login.html, and register.html DRY by avoiding repeated column divs.
+This file contains Jinja macros for rendering Bootstrap grid layouts containing the images of keys across the site. It helps keep the HTML templates for `account.html`, `challenge.html`, `login.html`, and `register.html` DRY by avoiding repeated column divs.
 
 Each macro defines a specific column layout variant (i.e. size at different screen sizes and spacing) suited to the page referenced in the macro name.
 
-### myself.html
+### `myself.html`
 
 On this page, users can see their attribute stats, number of Apprehensions, and Menace level in three stylised ‘cards’ in a Bootstrap grid system. Players can improve their stats by spending Apprehensions on a one-to-one basis in the middle form. They can return to the game by clicking the ‘Return’ button at the bottom of the page.
 
-### overcome.html
+### `overcome.html`
 
 This is the page that the `/challenge` route renders if the user’s menace reaches (or passes) 100. The button ‘Begin Anew’ resets the user’s stats and `story_state`, allowing them to restart the game.
 
-### register.html
+### `register.html`
 
 This page contains a form in which new users can register by providing a username, a password, and a confirmation of that password. As with 'Account' and 'Login', images provide more visual and thematic interest and the Bootstrap grid system is used with Jinja macros.
 
 ## Additional Files
 
-### .gitignore
+### `.gitignore`
 
 This file contains a list of files for GitHub to ignore, and includes the python cache, the virtual environment, the flask session folder, the `.env` and `game.db` files (not detailed here).
 
-### requirements.txt
+### `requirements.txt`
 
 This file details third-party python packages that will need to be installed to run the project locally.
 
